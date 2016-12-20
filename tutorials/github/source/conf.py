@@ -13,8 +13,10 @@
 # serve to show the default.
 
 import sys
+sys.path.insert(0, "/home/abhishekcs10/Desktop/github/dgplug_2016/tutorials/github")
 import os
 import sphinx_rtd_theme
+import sphinxtogithub
 
 html_theme = "sphinx_rtd_theme"
 
