@@ -12,7 +12,6 @@ Contents:
    :maxdepth: 2
    
    includeme
-   github.rst
    branching.rst
    github_pages.rst
    some_useful_info
