@@ -4,5 +4,5 @@ A Writedown of whatever I learn :smile:
 
 Let'See how it is rendered
 
-<a href="./github/html/index.html"> Title </a>
+<a href="./github/html/index.html"> Github</a>
 
