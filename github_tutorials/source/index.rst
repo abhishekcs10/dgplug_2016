@@ -10,7 +10,8 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
-
+   
+   includeme
    github.rst
    branching.rst
    github_pages.rst
