@@ -6,7 +6,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = githubtutorials
 SOURCEDIR     = source
-BUILDDIR      = ../../gh-pages/github
+BUILDDIR      = ../../gh-pages/github-tutorials
 
 # Put it first so that "make" without argument is like "make help".
 help:
