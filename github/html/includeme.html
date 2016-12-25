@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Add The File &mdash; github 1.0.1 documentation</title>
+  <title>Basics of GITHUB to get started &mdash; github 1.0.1 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="github 1.0.1 documentation" href="index.html"/>
-        <link rel="next" title="Source Control" href="github.html"/>
+        <link rel="next" title="The workflow" href="branching.html"/>
         <link rel="prev" title="Welcome to github’s documentation!" href="index.html"/> 
 
   
@@ -85,12 +85,32 @@
             
             
                 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Add The File</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github.html">Source Control</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basics of GITHUB to get started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#source-control">Source Control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#upstream">Upstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#downstream">Downstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-it-works">How it works</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-thing-from-existing-repository-your-own-github-account-online-on-github-to-your-machine-github-cloning">Getting thing from existing repository(your own github account) online on github to your machine (Github cloning)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-status-of-files-untracked-staged-or-commited">Check Status of files ( Untracked, staged or commited)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-modification-done-from-last-pull-version-of-the-project-to-offline-version">Check Modification Done from last pull version of the project to offline version.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#for-difference-with-offline-committed-version">For difference with offline committed version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-difference-with-offline-staged-version">For difference with offline staged version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#to-add-particular-file-to-the-github-repository">to add particular file to the github repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#to-commit-the-changes-in-the-github-repository">to commit the changes in the github repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#to-make-changes-to-online-copy-of-repository">to make changes to online copy of repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#to-get-the-changes-from-online-repository-to-the-local-machine">to get the changes from online repository to the local machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conflicts">Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-new-repository-on-your-local-machine-and-getting-it-to-the-github-remote-directory">Creating a new repository on your local machine and getting it to the github remote directory</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="branching.html">The workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="branching.html#branching">Branching</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github_pages.html">Github Pages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="some_useful_info.html">permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="some_useful_info.html">Understanding GITHUB</a></li>
 </ul>
 
             
@@ -121,7 +141,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Add The File</li>
+    <li>Basics of GITHUB to get started</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -135,8 +155,159 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="add-the-file">
-<h1>Add The File<a class="headerlink" href="#add-the-file" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="basics-of-github-to-get-started">
+<h1>Basics of GITHUB to get started<a class="headerlink" href="#basics-of-github-to-get-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="source-control">
+<h2>Source Control<a class="headerlink" href="#source-control" title="Permalink to this headline">¶</a></h2>
+<p>When multiple users are trying to edit the same file, how the original file gets edited is all that we read in source control</p>
+<p>Github keeps the track of all the changes that have been made.</p>
+<p>It detect, for example, conflicts on any line on which changes have been made. If the change is made on the same line it asks for the correct version of the file.</p>
+<div class="section" id="upstream">
+<h3>Upstream<a class="headerlink" href="#upstream" title="Permalink to this headline">¶</a></h3>
+<p>Remote Url where the commited changes are uploaded</p>
+</div>
+<div class="section" id="downstream">
+<h3>Downstream<a class="headerlink" href="#downstream" title="Permalink to this headline">¶</a></h3>
+<p>It is downloading of the repository</p>
+</div>
+<div class="section" id="how-it-works">
+<h3>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h3>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="_images/git.png"><img alt="Github-working" src="_images/git.png" style="width: 400px; height: 400px;" /></a>
+<p class="caption"><span class="caption-text">GITHUB SYNC</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="getting-thing-from-existing-repository-your-own-github-account-online-on-github-to-your-machine-github-cloning">
+<h2>Getting thing from existing repository(your own github account) online on github to your machine (Github cloning)<a class="headerlink" href="#getting-thing-from-existing-repository-your-own-github-account-online-on-github-to-your-machine-github-cloning" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">link_to_git_repository</span>
+</pre></div>
+</div>
+<p>it creates a folder with the name of the name of the project in the present directory.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li><dl class="first docutils">
+<dt>There can be two substitutes of <strong>link_to_git_repository</strong></dt>
+<dd>1-      The GITHUB project https url (eg: <a class="reference external" href="https://www.github.com/user/project">https://www.github.com/user/project</a>)
+2-      The ssh  link to your project (eg: git+ssh://git&#64;github.com/username/reponame.git)</dd>
+</dl>
+</li>
+<li>The advantage of later is you do not need to give password every time you push. (If your ssh keys are configured properly :p )</li>
+</ul>
+</div>
+</div>
+<div class="section" id="check-status-of-files-untracked-staged-or-commited">
+<h2>Check Status of files ( Untracked, staged or commited)<a class="headerlink" href="#check-status-of-files-untracked-staged-or-commited" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-modification-done-from-last-pull-version-of-the-project-to-offline-version">
+<h2>Check Modification Done from last pull version of the project to offline version.<a class="headerlink" href="#check-modification-done-from-last-pull-version-of-the-project-to-offline-version" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="for-difference-with-offline-committed-version">
+<h3>For difference with offline committed version<a class="headerlink" href="#for-difference-with-offline-committed-version" title="Permalink to this headline">¶</a></h3>
+<p>run on your local machine</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">diff</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-difference-with-offline-staged-version">
+<h3>For difference with offline staged version<a class="headerlink" href="#for-difference-with-offline-staged-version" title="Permalink to this headline">¶</a></h3>
+<p>run on your local machine</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">diff</span> <span class="o">--</span><span class="n">staged</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="to-add-particular-file-to-the-github-repository">
+<h2>to add particular file to the github repository<a class="headerlink" href="#to-add-particular-file-to-the-github-repository" title="Permalink to this headline">¶</a></h2>
+<p>the files which have not been yet added to the git repo are known as <strong>Untracked Files</strong>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">*</span><span class="n">file_name</span><span class="o">*</span>
+</pre></div>
+</div>
+<p>if you type git status again you will notice the changes to be commited in the github repository.</p>
+<p>To add all the files chaged in current github directory</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+
+                        <span class="n">OR</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">-</span><span class="n">A</span>
+</pre></div>
+</div>
+<p>After adding the git files using git add the files are said to be in <strong>Staged state</strong></p>
+</div>
+<div class="section" id="to-commit-the-changes-in-the-github-repository">
+<h2>to commit the changes in the github repository<a class="headerlink" href="#to-commit-the-changes-in-the-github-repository" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;your_message&quot;</span>
+</pre></div>
+</div>
+<p>it makes changes in the local copy of the repository but still online copy is unchanged.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">to make multi line msg comment simply remove =m arguement git then opens vim to add message</p>
+</div>
+</div>
+<div class="section" id="to-make-changes-to-online-copy-of-repository">
+<h2>to make changes to online copy of repository<a class="headerlink" href="#to-make-changes-to-online-copy-of-repository" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">&lt;</span><span class="n">remote_url</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">branch</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="simple">
+<li>If you do not specify &lt;remote_url&gt; and &lt;branch&gt; it reads values of upstream and commits in your current branch from .git/config directory in root of your project directory i.e. where git is initialized.</li>
+<li>The project may need to set upstream. This can be done by</li>
+</ul>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">my_branch</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="to-get-the-changes-from-online-repository-to-the-local-machine">
+<h2>to get the changes from online repository to the local machine<a class="headerlink" href="#to-get-the-changes-from-online-repository-to-the-local-machine" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><cite>git commands work if the user is inside the git directory</cite></p>
+</div>
+<p>now if you check git status you will be notified about the changes made to git repository</p>
+</div>
+<div class="section" id="conflicts">
+<h2>Conflicts<a class="headerlink" href="#conflicts" title="Permalink to this headline">¶</a></h2>
+<p>If there are git conflicts in a file, at merge time they will be reflected in the file
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;HEAD    =&gt; changes made by you</p>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; some_hash_checksum</p>
+<p>simply fix conflicts manually
+remove the extra lines added by git
+save file</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">type</span> <span class="n">git</span> <span class="n">add</span> <span class="o">-</span><span class="n">A</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Message&quot;</span>
+</pre></div>
+</div>
+<p>then merge will continue</p>
+</div>
+<div class="section" id="creating-a-new-repository-on-your-local-machine-and-getting-it-to-the-github-remote-directory">
+<h2>Creating a new repository on your local machine and getting it to the github remote directory<a class="headerlink" href="#creating-a-new-repository-on-your-local-machine-and-getting-it-to-the-github-remote-directory" title="Permalink to this headline">¶</a></h2>
+<p>First make a folder and then run</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>this initialises the git repository in your current folder. Then commit project in your local machine repository.</p>
+<p>then when you get internet connection</p>
+<p>make a repository with the same name
+now go to the local machine github project folder and run</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">http_path_to_your_proect</span>
+</pre></div>
+</div>
+<p>then</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">origin</span><span class="o">/</span><span class="n">master</span> <span class="n">master</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -146,7 +317,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="github.html" class="btn btn-neutral float-right" title="Source Control" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="branching.html" class="btn btn-neutral float-right" title="The workflow" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Welcome to github’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
