@@ -93,6 +93,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#github-configuration-file">github configuration file</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#dealing-with-ssh-error">Dealing with ssh-error</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rebase">Rebase</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-work-with-repository-of-some-other-organisation">How to work with repository of some other organisation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#the-book-steps-progit">The book steps (ProGit)</a></li>
@@ -167,6 +168,14 @@
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">config</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="dealing-with-ssh-error">
+<h2>Dealing with ssh-error<a class="headerlink" href="#dealing-with-ssh-error" title="Permalink to this headline">¶</a></h2>
+<p>If you are getting error even after setting up public key then the reason may be that github is not able to locate your private.</p>
+<p>Fix by running</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">add</span> <span class="s2">&quot;path_to_your_private_key&quot;</span>  <span class="o">//</span><span class="n">Private</span> <span class="n">key</span> <span class="n">file</span> <span class="n">eg</span><span class="o">-</span>  <span class="n">id_rsa</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="rebase">
