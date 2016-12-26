@@ -1,0 +1,42 @@
+\BOOKMARK [0][-]{chapter.1}{Input}{}% 1
+\BOOKMARK [1][-]{section.1.1}{input number to arbitrary precision}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{roundf->}{chapter.1}% 3
+\BOOKMARK [0][-]{chapter.2}{Output}{}% 4
+\BOOKMARK [1][-]{section.2.1}{print to arbitrary precision}{chapter.2}% 5
+\BOOKMARK [0][-]{chapter.3}{Date format}{}% 6
+\BOOKMARK [1][-]{section.3.1}{Determine day on given date}{chapter.3}% 7
+\BOOKMARK [1][-]{section.3.2}{Explanation of above}{chapter.3}% 8
+\BOOKMARK [0][-]{chapter.4}{Allocation in c}{}% 9
+\BOOKMARK [1][-]{section.4.1}{malloc}{chapter.4}% 10
+\BOOKMARK [1][-]{section.4.2}{calloc}{chapter.4}% 11
+\BOOKMARK [1][-]{section.4.3}{c++ allocation}{chapter.4}% 12
+\BOOKMARK [0][-]{chapter.5}{algorithm}{}% 13
+\BOOKMARK [1][-]{section.5.1}{sorting}{chapter.5}% 14
+\BOOKMARK [0][-]{chapter.6}{VECTOR}{}% 15
+\BOOKMARK [1][-]{section.6.1}{unique\(begin,end\)}{chapter.6}% 16
+\BOOKMARK [1][-]{section.6.2}{resize\(count\)}{chapter.6}% 17
+\BOOKMARK [1][-]{section.6.3}{assign\(int how\137many, int what\137value\)}{chapter.6}% 18
+\BOOKMARK [0][-]{chapter.7}{Stack}{}% 19
+\BOOKMARK [1][-]{section.7.1}{Constructor}{chapter.7}% 20
+\BOOKMARK [1][-]{section.7.2}{insert}{chapter.7}% 21
+\BOOKMARK [1][-]{section.7.3}{access-top}{chapter.7}% 22
+\BOOKMARK [1][-]{section.7.4}{pop top}{chapter.7}% 23
+\BOOKMARK [0][-]{chapter.8}{Queue}{}% 24
+\BOOKMARK [1][-]{section.8.1}{Constructor}{chapter.8}% 25
+\BOOKMARK [1][-]{section.8.2}{insert -rear}{chapter.8}% 26
+\BOOKMARK [1][-]{section.8.3}{delete -front}{chapter.8}% 27
+\BOOKMARK [1][-]{section.8.4}{access front element //the first inserted element}{chapter.8}% 28
+\BOOKMARK [1][-]{section.8.5}{check if queue is empty}{chapter.8}% 29
+\BOOKMARK [1][-]{section.8.6}{access rear element //newest inserted}{chapter.8}% 30
+\BOOKMARK [0][-]{chapter.9}{Priority Queue\(MAX\)}{}% 31
+\BOOKMARK [1][-]{section.9.1}{Constructor}{chapter.9}% 32
+\BOOKMARK [1][-]{section.9.2}{Insertion}{chapter.9}% 33
+\BOOKMARK [1][-]{section.9.3}{Deletion}{chapter.9}% 34
+\BOOKMARK [1][-]{section.9.4}{Access top element}{chapter.9}% 35
+\BOOKMARK [0][-]{chapter.10}{MAP}{}% 36
+\BOOKMARK [1][-]{section.10.1}{Create map}{chapter.10}% 37
+\BOOKMARK [1][-]{section.10.2}{Insert}{chapter.10}% 38
+\BOOKMARK [1][-]{section.10.3}{iterator}{chapter.10}% 39
+\BOOKMARK [1][-]{section.10.4}{find key}{chapter.10}% 40
+\BOOKMARK [1][-]{section.10.5}{access value using iterator}{chapter.10}% 41
+\BOOKMARK [0][-]{chapter.11}{Indices and tables}{}% 42

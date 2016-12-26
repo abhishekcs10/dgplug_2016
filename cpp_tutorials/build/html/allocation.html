@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Allocation in c &mdash; cpp 1.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="cpp 1.0.1 documentation" href="index.html" />
+    <link rel="next" title="algorithm" href="algorithm.html" />
+    <link rel="prev" title="Date format" href="dateformat.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="allocation-in-c">
+<h1>Allocation in c<a class="headerlink" href="#allocation-in-c" title="Permalink to this headline">¶</a></h1>
+<p>applies to pointer of data structure</p>
+<div class="section" id="malloc">
+<h2>malloc<a class="headerlink" href="#malloc" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>(void *) malloc (num*sizeof(arr));
+</pre></div>
+</div>
+<p>simply allocates memory</p>
+</div>
+<div class="section" id="calloc">
+<h2>calloc<a class="headerlink" href="#calloc" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>(void *) calloc(int num, sizeof(type));
+</pre></div>
+</div>
+<p>clears memory and initializes to zero.</p>
+</div>
+<div class="section" id="c-allocation">
+<h2>c++ allocation<a class="headerlink" href="#c-allocation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>pointer = new type
+pointer = new type [number_of_elements]
+</pre></div>
+</div>
+<p>The first expression is used to allocate memory to contain one single element of type type. The second one is used to allocate a block (an array) of elements of type type, where number_of_elements is an integer value representing the amount of these. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre>int* foo;
+foo = new int [5];
+</pre></div>
+</div>
+<p>In this case, the system dynamically allocates space for five elements of type int and returns a pointer to the first element of the sequence, which is assigned to foo (a pointer). Therefore, foo now points to a valid block of memory with space for five elements of type int.</p>
+<div class="highlight-python"><div class="highlight"><pre>int *k;
+k=new (nothrow) int[i];
+</pre></div>
+</div>
+<p>In this case, if the allocation of this block of memory fails, the failure can be detected by checking if foo is a null pointer:</p>
+<div class="highlight-python"><div class="highlight"><pre>1 int* foo;
+2 foo = new (nothrow) int [5];
+3 if (foo == nullptr) {
+4 // error assigning memory. Take measures.
+5 }
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Allocation in c</a><ul>
+<li><a class="reference internal" href="#malloc">malloc</a></li>
+<li><a class="reference internal" href="#calloc">calloc</a></li>
+<li><a class="reference internal" href="#c-allocation">c++ allocation</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="dateformat.html" title="previous chapter">Date format</a></li>
+      <li>Next: <a href="algorithm.html" title="next chapter">algorithm</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/allocation.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, abhishekcs10.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/allocation.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

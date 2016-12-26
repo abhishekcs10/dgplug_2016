@@ -1,0 +1,44 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Input}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}input number to arbitrary precision}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}roundf-\textgreater {}}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Output}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}print to arbitrary precision}{5}{section.2.1}
+\contentsline {chapter}{\numberline {3}Date format}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Determine day on given date}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Explanation of above}{7}{section.3.2}
+\contentsline {chapter}{\numberline {4}Allocation in c}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}malloc}{9}{section.4.1}
+\contentsline {section}{\numberline {4.2}calloc}{9}{section.4.2}
+\contentsline {section}{\numberline {4.3}c++ allocation}{9}{section.4.3}
+\contentsline {chapter}{\numberline {5}algorithm}{11}{chapter.5}
+\contentsline {section}{\numberline {5.1}sorting}{11}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}constructors}{11}{subsection.5.1.1}
+\contentsline {chapter}{\numberline {6}VECTOR}{13}{chapter.6}
+\contentsline {section}{\numberline {6.1}unique(begin,end)}{13}{section.6.1}
+\contentsline {section}{\numberline {6.2}resize(count)}{13}{section.6.2}
+\contentsline {section}{\numberline {6.3}assign(int how\_many, int what\_value)}{13}{section.6.3}
+\contentsline {chapter}{\numberline {7}Stack}{15}{chapter.7}
+\contentsline {section}{\numberline {7.1}Constructor}{15}{section.7.1}
+\contentsline {section}{\numberline {7.2}insert}{15}{section.7.2}
+\contentsline {section}{\numberline {7.3}access-top}{15}{section.7.3}
+\contentsline {section}{\numberline {7.4}pop top}{15}{section.7.4}
+\contentsline {chapter}{\numberline {8}Queue}{17}{chapter.8}
+\contentsline {section}{\numberline {8.1}Constructor}{17}{section.8.1}
+\contentsline {section}{\numberline {8.2}insert -rear}{17}{section.8.2}
+\contentsline {section}{\numberline {8.3}delete -front}{17}{section.8.3}
+\contentsline {section}{\numberline {8.4}access front element //the first inserted element}{17}{section.8.4}
+\contentsline {section}{\numberline {8.5}check if queue is empty}{17}{section.8.5}
+\contentsline {section}{\numberline {8.6}access rear element //newest inserted}{17}{section.8.6}
+\contentsline {chapter}{\numberline {9}Priority Queue(MAX)}{19}{chapter.9}
+\contentsline {section}{\numberline {9.1}Constructor}{19}{section.9.1}
+\contentsline {section}{\numberline {9.2}Insertion}{19}{section.9.2}
+\contentsline {section}{\numberline {9.3}Deletion}{19}{section.9.3}
+\contentsline {section}{\numberline {9.4}Access top element}{19}{section.9.4}
+\contentsline {chapter}{\numberline {10}MAP}{21}{chapter.10}
+\contentsline {section}{\numberline {10.1}Create map}{21}{section.10.1}
+\contentsline {section}{\numberline {10.2}Insert}{21}{section.10.2}
+\contentsline {section}{\numberline {10.3}iterator}{21}{section.10.3}
+\contentsline {section}{\numberline {10.4}find key}{21}{section.10.4}
+\contentsline {section}{\numberline {10.5}access value using iterator}{21}{section.10.5}
+\contentsline {chapter}{\numberline {11}Indices and tables}{23}{chapter.11}

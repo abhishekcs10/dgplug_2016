@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Date format &mdash; cpp 1.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="cpp 1.0.1 documentation" href="index.html" />
+    <link rel="next" title="MAP" href="map.html" />
+    <link rel="prev" title="algorithm" href="algorithm.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="date-format">
+<h1>Date format<a class="headerlink" href="#date-format" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="determine-day-on-given-date">
+<h2>Determine day on given date<a class="headerlink" href="#determine-day-on-given-date" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>#include&lt;stdio.h&gt;
+
+int dayofweek(int d, int m, int y)
+{
+        static int t[] = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 };
+        y -= m &lt; 3;
+        return ( y + y/4 - y/100 + y/400 + t[m-1] + d) % 7;
+}
+
+/* Driver function to test above function*/
+int main()
+{
+        int day = dayofweek(30, 8, 2010);
+        printf (&quot;%d&quot;, day);
+        return 0;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="explanation-of-above">
+<h2>Explanation of above<a class="headerlink" href="#explanation-of-above" title="Permalink to this headline">¶</a></h2>
+<p>Let us start with the simple scenario in which leap years did not exist and every year had 365 days.</p>
+<p>Knowing  what day January 1 falls on a certain year, it is easy to find which  day any other date falls. This is how you go about it : January has 31 =  7 × 4 + 3 days, so February 1 will fall on the day which follows three  days after January 1. Similarly, March 1 will fall on the day three days  after the day corresponding to January 1, April 1 will fall 6 days  after, and so on. Thus, the first days of each month are offset with  respect to January 1 by the array {0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5}.  This array is essentially what t[] is. Notice that it is slightly  different from the t[] given in the question, but that is due to leap  years and will be explained later. Once the day corresponding to the  first date of the month is known, finding the day for any other date is  just a matter of addition.</p>
+<p>Since  365 = 7 × 52 + 1, the day corresponding to a given date will become  incremented by 1 every year. For example, July 14, 2014 is a Monday and  July 14, 2015 will be a Tuesday. Hence adding the difference between  year numbers allows us to switch from the day of a reference year to any  other year.</p>
+<p>At this stage, the leap-year free dow function can be written as such:</p>
+<div class="highlight-python"><div class="highlight"><pre>int dow(int y, int m, int d){
+  static int t[] = {0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5};
+  return (y + t[m-1] + d + c) % 7;
+}
+</pre></div>
+</div>
+<p>Here  c is a constant which corresponds to setting the &#8220;origin&#8221; of the day  system : y, t[m] and d only tell us how many days to shift by; we need a  reference to start the shifting and which is provided by c.</p>
+<p>Now  let us look at the real case when there are leap years. Every 4 years,  our calculation will gain one extra day. Except every 100 years when it  doesn&#8217;t. Except every 400 years when it does (Seriously, what kind of  intelligent designer comes up with this stuff? Couldn&#8217;t the duration of  the year have been an integer multiple of the synodic day?). How do we  put in these additional days? Well, just add y/4 - y/100 + y/400. Note  that all division is integer division. This adds exactly the required  number of leap days.</p>
+<p>Except  there is a tiny problem. The leap day is not January 0, it is February  29. This means that the current year should not be counted for the leap  day calculation for the first two months.</p>
+<p>How  do we do this? Well, there are probably many intuitive ways to go about  this. But this piece of code sacrifices intuition for brevity. Suppose  that if the month were January or February, we subtracted 1 from the  year. This means that during these months, the y/4 value would be that  of the previous year and would not be counted.</p>
+<p>Smart,  right? Except for a tiny problem. We are subtracting 1 from the year  for January and February for non-leap years too. This means that there  would be a &#8220;blank&#8221; day between February 28 and March 1, that is, we have  made every non-leap year a leap year, and leap years double-leap years.  Hm, so what if we subtracted 1 from the t[] values of every month after  February? That would fill the gap, and the leap year problem is solved.  That is, we need to make the following changes:</p>
+<div class="highlight-python"><div class="highlight"><pre>t[] now becomes {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4}
+</pre></div>
+</div>
+<p>if m corresponds to Jan/Feb (that is, m&lt;3) we decrement y by 1
+the annual increment inside the modulus is now y + y/4 - y/100 + y/400 in place of y</p>
+<p>That&#8217;s it, we get the full solution</p>
+<div class="highlight-python"><div class="highlight"><pre>int dow(int y, int m, int d){
+  static int t[] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
+  y -= m &lt; 3;
+  return (y + y/4 - y/100 + y/400 + t[m-1] + d + c) % 7;
+}
+</pre></div>
+</div>
+<p>Coincidentially, c just happens to be 0 - this is an empirical fact and cannot be &#8220;derived&#8221; from anything we have done till now - and we get back the function in the question.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Date format</a><ul>
+<li><a class="reference internal" href="#determine-day-on-given-date">Determine day on given date</a></li>
+<li><a class="reference internal" href="#explanation-of-above">Explanation of above</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="algorithm.html" title="previous chapter">algorithm</a></li>
+      <li>Next: <a href="map.html" title="next chapter">MAP</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/dateformat.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, abhishekcs10.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/dateformat.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
