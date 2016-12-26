@@ -28,6 +28,17 @@ github configuration file
 
 	.git/config
 
+Dealing with ssh-error
+=========================
+
+If you are getting error even after setting up public key then the reason may be that github is not able to locate your private.
+
+Fix by running 
+
+::
+
+	ssh-add "path_to_your_private_key"  //Private key file eg-  id_rsa
+
 
 Rebase
 =========
