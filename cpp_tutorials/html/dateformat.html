@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Date format &#8212; CPP Tutorials 1.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Allocation in c" href="allocation.html" />
+    <link rel="prev" title="Output" href="output.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          CPP Tutorials</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="input.html">Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">Output</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Date format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="allocation.html">Allocation in c</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm.html">algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vector.html">VECTOR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="queue.html">Queue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="priority_queue.html">Priority Queue(MAX)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map.html">MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bitset.html">Bitset</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Date format</a><ul>
+<li><a class="reference internal" href="#determine-day-on-given-date">Determine day on given date</a></li>
+<li><a class="reference internal" href="#explanation-of-above">Explanation of above</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="output.html" title="Previous Chapter: Output"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Output</span>
+    </a>
+  </li>
+  <li>
+    <a href="allocation.html" title="Next Chapter: Allocation in c"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Allocation in c &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/dateformat.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="date-format">
+<h1>Date format<a class="headerlink" href="#date-format" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="determine-day-on-given-date">
+<h2>Determine day on given date<a class="headerlink" href="#determine-day-on-given-date" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#include&lt;stdio.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">dayofweek</span><span class="p">(</span><span class="nb">int</span> <span class="n">d</span><span class="p">,</span> <span class="nb">int</span> <span class="n">m</span><span class="p">,</span> <span class="nb">int</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">static</span> <span class="nb">int</span> <span class="n">t</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span> <span class="p">};</span>
+        <span class="n">y</span> <span class="o">-=</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">(</span> <span class="n">y</span> <span class="o">+</span> <span class="n">y</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">y</span><span class="o">/</span><span class="mi">100</span> <span class="o">+</span> <span class="n">y</span><span class="o">/</span><span class="mi">400</span> <span class="o">+</span> <span class="n">t</span><span class="p">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span> <span class="o">%</span> <span class="mi">7</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">/*</span> <span class="n">Driver</span> <span class="n">function</span> <span class="n">to</span> <span class="n">test</span> <span class="n">above</span> <span class="n">function</span><span class="o">*/</span>
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="nb">int</span> <span class="n">day</span> <span class="o">=</span> <span class="n">dayofweek</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2010</span><span class="p">);</span>
+        <span class="n">printf</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">day</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="explanation-of-above">
+<h2>Explanation of above<a class="headerlink" href="#explanation-of-above" title="Permalink to this headline">¶</a></h2>
+<p>Let us start with the simple scenario in which leap years did not exist and every year had 365 days.</p>
+<p>Knowing  what day January 1 falls on a certain year, it is easy to find which  day any other date falls. This is how you go about it : January has 31 =  7 × 4 + 3 days, so February 1 will fall on the day which follows three  days after January 1. Similarly, March 1 will fall on the day three days  after the day corresponding to January 1, April 1 will fall 6 days  after, and so on. Thus, the first days of each month are offset with  respect to January 1 by the array {0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5}.  This array is essentially what t[] is. Notice that it is slightly  different from the t[] given in the question, but that is due to leap  years and will be explained later. Once the day corresponding to the  first date of the month is known, finding the day for any other date is  just a matter of addition.</p>
+<p>Since  365 = 7 × 52 + 1, the day corresponding to a given date will become  incremented by 1 every year. For example, July 14, 2014 is a Monday and  July 14, 2015 will be a Tuesday. Hence adding the difference between  year numbers allows us to switch from the day of a reference year to any  other year.</p>
+<p>At this stage, the leap-year free dow function can be written as such:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">dow</span><span class="p">(</span><span class="nb">int</span> <span class="n">y</span><span class="p">,</span> <span class="nb">int</span> <span class="n">m</span><span class="p">,</span> <span class="nb">int</span> <span class="n">d</span><span class="p">){</span>
+  <span class="n">static</span> <span class="nb">int</span> <span class="n">t</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">t</span><span class="p">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">d</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">%</span> <span class="mi">7</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here  c is a constant which corresponds to setting the &#8220;origin&#8221; of the day  system : y, t[m] and d only tell us how many days to shift by; we need a  reference to start the shifting and which is provided by c.</p>
+<p>Now  let us look at the real case when there are leap years. Every 4 years,  our calculation will gain one extra day. Except every 100 years when it  doesn&#8217;t. Except every 400 years when it does (Seriously, what kind of  intelligent designer comes up with this stuff? Couldn&#8217;t the duration of  the year have been an integer multiple of the synodic day?). How do we  put in these additional days? Well, just add y/4 - y/100 + y/400. Note  that all division is integer division. This adds exactly the required  number of leap days.</p>
+<p>Except  there is a tiny problem. The leap day is not January 0, it is February  29. This means that the current year should not be counted for the leap  day calculation for the first two months.</p>
+<p>How  do we do this? Well, there are probably many intuitive ways to go about  this. But this piece of code sacrifices intuition for brevity. Suppose  that if the month were January or February, we subtracted 1 from the  year. This means that during these months, the y/4 value would be that  of the previous year and would not be counted.</p>
+<p>Smart,  right? Except for a tiny problem. We are subtracting 1 from the year  for January and February for non-leap years too. This means that there  would be a &#8220;blank&#8221; day between February 28 and March 1, that is, we have  made every non-leap year a leap year, and leap years double-leap years.  Hm, so what if we subtracted 1 from the t[] values of every month after  February? That would fill the gap, and the leap year problem is solved.  That is, we need to make the following changes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">[]</span> <span class="n">now</span> <span class="n">becomes</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>if m corresponds to Jan/Feb (that is, m&lt;3) we decrement y by 1
+the annual increment inside the modulus is now y + y/4 - y/100 + y/400 in place of y</p>
+<p>That&#8217;s it, we get the full solution</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">dow</span><span class="p">(</span><span class="nb">int</span> <span class="n">y</span><span class="p">,</span> <span class="nb">int</span> <span class="n">m</span><span class="p">,</span> <span class="nb">int</span> <span class="n">d</span><span class="p">){</span>
+  <span class="n">static</span> <span class="nb">int</span> <span class="n">t</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
+  <span class="n">y</span> <span class="o">-=</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">y</span><span class="o">/</span><span class="mi">4</span> <span class="o">-</span> <span class="n">y</span><span class="o">/</span><span class="mi">100</span> <span class="o">+</span> <span class="n">y</span><span class="o">/</span><span class="mi">400</span> <span class="o">+</span> <span class="n">t</span><span class="p">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">d</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">%</span> <span class="mi">7</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Coincidentially, c just happens to be 0 - this is an empirical fact and cannot be &#8220;derived&#8221; from anything we have done till now - and we get back the function in the question.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016, abhishekcs10.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
