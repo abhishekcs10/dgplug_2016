@@ -12,11 +12,25 @@ body {
    text-decoration: none;
 }
 
+.col{
+	margin: 15px;
+	background-color: #111111;
+	border-radius: 5em;
+	align-self: center;
+	padding: 10 50 10 50;
+
+}
+
 .centralize{
 position: fixed;
-top: 40%;
+//background-color: #00f0df;
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin: 0.5em;
+height: 100%;
 width: 100%;
-text-align: center;
+
 }
 
 #text-glow{
