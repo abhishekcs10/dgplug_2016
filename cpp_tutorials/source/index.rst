@@ -14,6 +14,7 @@ Contents:
    input.rst
    output.rst
    dateformat.rst
+   math.rst
    allocation.rst
    algorithm.rst
    vector.rst
