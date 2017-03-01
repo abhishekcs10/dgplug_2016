@@ -121,6 +121,11 @@ it makes changes in the local copy of the repository but still online copy is un
 to make changes to online copy of repository
 ==============================================
 
+git push
+---------
+
+Update remote refs along with associated objects
+
 ::
 
 	git push <remote_url> <branch>
