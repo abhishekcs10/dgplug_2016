@@ -1,0 +1,1717 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+
+
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-181ab2bfd39f84244ec09224501ce17957dee40c02a8c0d3e503b9dfb63c2f8e.css" integrity="sha256-GBqyv9OfhCROwJIkUBzheVfe5AwCqMDT5QO537Y8L44=" media="all" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-b52c57c07c4915b411746bf84ae6a5d3677b7f35d74105281d365c2ff17ca512.css" integrity="sha256-tSxXwHxJFbQRdGv4Sual02d7fzXXQQUoHTZcL/F8pRI=" media="all" rel="stylesheet" />
+  
+  
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/site-d826c765b656f31c7d808168e332aa14ccb724820f292ecd2dfb74b156e2ebde.css" integrity="sha256-2CbHZbZW8xx9gIFo4zKqFMy3JIIPKS7NLft0sVbi694=" media="all" rel="stylesheet" />
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>Introduction to Mininet · mininet/mininet Wiki · GitHub</title>
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    
+    <meta content="https://avatars1.githubusercontent.com/u/744275?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="mininet/mininet" property="og:title" /><meta content="https://github.com/mininet/mininet" property="og:url" /><meta content="mininet - Emulator for rapid prototyping of Software Defined Networks" property="og:description" />
+
+  <link rel="assets" href="https://assets-cdn.github.com/">
+  
+  <meta name="pjax-timeout" content="1000">
+  
+  <meta name="request-id" content="EDD6:28EA:3D49BEF:60E7773:58F636E6" data-pjax-transient>
+  
+
+  <meta name="selected-link" value="repo_wiki" data-pjax-transient>
+
+  <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="EDD6:28EA:3D49BEF:60E7773:58F636E6" name="octolytics-dimension-request_id" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/wiki/show" data-pjax-transient="true" name="analytics-location" />
+
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged Out">
+
+
+  
+
+      <meta name="hostname" content="github.com">
+  <meta name="user-login" content="">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="NTkzODhmZDA3NzhlMWYzZGNjZjk0MzQwZGU3YTVkZjFkZGYyOTM3MDM4ZDFmNGE3YTllMGZkMTEwZjdmNTllZXx7InJlbW90ZV9hZGRyZXNzIjoiMjAzLjExMC4yNDIuNCIsInJlcXVlc3RfaWQiOiJFREQ2OjI4RUE6M0Q0OUJFRjo2MEU3NzczOjU4RjYzNkU2IiwidGltZXN0YW1wIjoxNDkyNTMwOTE5LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+
+
+  <meta name="html-safe-nonce" content="a9ea2bc40e6a2a421df448fd4b0e6a95383ae586">
+
+  <meta http-equiv="x-pjax-version" content="78d5a6c1479a2e00a0919790b7c98fbd">
+  
+
+    
+  <meta name="description" content="mininet - Emulator for rapid prototyping of Software Defined Networks">
+  <meta name="go-import" content="github.com/mininet/mininet git https://github.com/mininet/mininet.git">
+
+  <meta content="744275" name="octolytics-dimension-user_id" /><meta content="mininet" name="octolytics-dimension-user_login" /><meta content="1646466" name="octolytics-dimension-repository_id" /><meta content="mininet/mininet" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="1646466" name="octolytics-dimension-repository_network_root_id" /><meta content="mininet/mininet" name="octolytics-dimension-repository_network_root_nwo" />
+        <link href="https://github.com/mininet/mininet/commits/master.atom" rel="alternate" title="Recent Commits to mininet:master" type="application/atom+xml">
+
+
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+
+  </head>
+
+  <body class="logged-out env-production">
+    
+
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+
+          <header class="site-header js-details-container Details" role="banner">
+  <div class="container-responsive">
+    <a class="header-logo-invertocat" href="https://github.com/" aria-label="Homepage" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+    </a>
+
+    <button class="btn-link float-right site-header-toggle js-details-target" type="button" aria-label="Toggle navigation">
+      <svg aria-hidden="true" class="octicon octicon-three-bars" height="24" version="1.1" viewBox="0 0 12 16" width="18"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"/></svg>
+    </button>
+
+    <div class="site-header-menu">
+      <nav class="site-header-nav">
+        <a href="/features" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:features" data-selected-links="/features /features">
+          Features
+</a>        <a href="/business" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:business" data-selected-links="/business /business/security /business/customers /business">
+          Business
+</a>        <a href="/explore" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship /showcases /explore">
+          Explore
+</a>        <a href="/pricing" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:pricing" data-selected-links="/pricing /pricing">
+          Pricing
+</a>      </nav>
+
+      <div class="site-header-actions">
+          <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/mininet/mininet/search" class="js-site-search-form" data-scoped-search-url="/mininet/mininet/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <label class="form-control header-search-wrapper js-chromeless-input-container">
+        <a href="/mininet/mininet/wiki/Introduction-to-Mininet" class="header-search-scope no-underline">This repository</a>
+      <input type="text"
+        class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
+        data-hotkey="s"
+        name="q"
+        value=""
+        placeholder="Search"
+        aria-label="Search this repository"
+        data-unscoped-placeholder="Search GitHub"
+        data-scoped-placeholder="Search"
+        autocapitalize="off">
+        <input type="hidden" class="js-site-search-type-field" name="type" >
+    </label>
+</form></div>
+
+
+          <a class="text-bold site-header-link" href="/login?return_to=%2Fmininet%2Fmininet%2Fwiki%2FIntroduction-to-Mininet" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+            <span class="text-gray">or</span>
+            <a class="text-bold site-header-link" href="/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  </div>
+
+  <div id="start-of-content" class="accessibility-aid"></div>
+
+    <div id="js-flash-container">
+</div>
+
+
+
+  <div role="main">
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+    <div id="js-repo-pjax-container" data-pjax-container>
+        
+
+
+
+  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+    <div class="container repohead-details-container">
+
+
+      <ul class="pagehead-actions">
+  <li>
+      <a href="/login?return_to=%2Fmininet%2Fmininet"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+    Watch
+  </a>
+  <a class="social-count" href="/mininet/mininet/watchers"
+     aria-label="267 users are watching this repository">
+    267
+  </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Fmininet%2Fmininet"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="/mininet/mininet/stargazers"
+      aria-label="1772 users starred this repository">
+      1,772
+    </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Fmininet%2Fmininet"
+        class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+        Fork
+      </a>
+
+    <a href="/mininet/mininet/network" class="social-count"
+       aria-label="849 users forked this repository">
+      849
+    </a>
+  </li>
+</ul>
+
+      <h1 class="public ">
+  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+  <span class="author" itemprop="author"><a href="/mininet" class="url fn" rel="author">mininet</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="/mininet/mininet" data-pjax="#js-repo-pjax-container">mininet</a></strong>
+
+</h1>
+
+    </div>
+    <div class="container">
+      
+<nav class="reponav js-repo-nav js-sidenav-container-pjax"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/mininet/mininet" class="js-selected-navigation-item reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /mininet/mininet" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a href="/mininet/mininet/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /mininet/mininet/issues" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+        <span itemprop="name">Issues</span>
+        <span class="counter">136</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/mininet/mininet/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /mininet/mininet/pulls" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="counter">56</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+    <a href="/mininet/mininet/projects" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /mininet/mininet/projects">
+      <svg aria-hidden="true" class="octicon octicon-project" height="16" version="1.1" viewBox="0 0 15 16" width="15"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+      Projects
+      <span class="counter">0</span>
+</a>
+    <a href="/mininet/mininet/wiki" class="js-selected-navigation-item selected reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /mininet/mininet/wiki">
+      <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
+      Wiki
+</a>
+
+  <a href="/mininet/mininet/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /mininet/mininet/pulse">
+    <svg aria-hidden="true" class="octicon octicon-pulse" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8z"/></svg>
+    Pulse
+</a>
+  <a href="/mininet/mininet/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /mininet/mininet/graphs">
+    <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
+    Graphs
+</a>
+
+</nav>
+
+    </div>
+  </div>
+
+<div class="container new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content">
+
+    
+          
+
+<div id="wiki-wrapper" class="wiki-wrapper page">
+<div class="gh-header">
+  <div class="gh-header-show">
+    <h1 class="gh-header-title instapaper_title">Introduction to Mininet</h1>
+      <div class="gh-header-meta">
+        lantz edited this page <relative-time datetime="2017-02-13T20:34:37Z">Feb 14, 2017</relative-time>
+        &middot;
+        <a href="/mininet/mininet/wiki/Introduction-to-Mininet/_history" class="history">
+          150 revisions
+        </a>
+      </div>
+  </div>
+</div>
+<div id="wiki-content" class="wiki-content">
+  <div class="has-rightbar">
+
+  <div id="wiki-rightbar" class="wiki-rightbar">
+    <div class="wiki-pages-box readability-sidebar boxed-group flush js-wiki-pages-box collapsed" role="navigation">
+      
+<h3 class="js-wiki-toggle-collapse wiki-auxiliary-content">
+  <svg aria-hidden="true" class="octicon octicon-triangle-down caret-expanded" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M0 5l6 6 6-6z"/></svg>
+  <svg aria-hidden="true" class="octicon octicon-triangle-right caret-collapsed" height="16" version="1.1" viewBox="0 0 6 16" width="6"><path fill-rule="evenodd" d="M0 14l6-6-6-6z"/></svg>
+  Pages <span class="counter">66</span>
+</h3>
+<div class="boxed-group-inner wiki-auxiliary-content wiki-auxiliary-content-no-bg">
+    <div class="filter-bar">
+      <input type="text" id="wiki-pages-filter" class="form-control input-sm input-block js-filterable-field" placeholder="Find a Page…" aria-label="Find a Page…" tabindex="2">
+    </div>
+
+  <ul class="wiki-pages" data-filterable-for="wiki-pages-filter" data-filterable-type="substring">
+    <li>
+      <strong><a href="/mininet/mininet/wiki" class="wiki-page-link">Home</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/%23-mininet-package-need...." class="wiki-page-link"># mininet package need....</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/%5BGSoC-2013%5D-Web-Interface-for-Sharing-Mininet-Systems" class="wiki-page-link">[GSoC 2013] Web Interface for Sharing Mininet Systems</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/%5BGSoC-2013%5D-Web-Interface-for-Sharing-Mininet-Systems-%5BOld%5D" class="wiki-page-link">[GSoC 2013] Web Interface for Sharing Mininet Systems [Old]</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/Automated-VM-Creation-and-Testing" class="wiki-page-link">Automated VM Creation and Testing</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/Automatic-mininet-network-creation-based-on-a-real-network" class="wiki-page-link">Automatic mininet network creation based on a real network</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/BGP-Path-Hijacking-Attack-Demo" class="wiki-page-link">BGP Path Hijacking Attack Demo</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/Bufferbloat" class="wiki-page-link">Bufferbloat</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/Bugs" class="wiki-page-link">Bugs</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/Build-Test-Release-Infrastructure" class="wiki-page-link">Build Test Release Infrastructure</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/Can-I-set-the-Mean-Time-Between-Failures-of-switch%3F" class="wiki-page-link">Can I set the Mean Time Between Failures of switch?</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/Cluster-Edition-Prototype" class="wiki-page-link">Cluster Edition Prototype</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/Console-App" class="wiki-page-link">Console App</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/Credits" class="wiki-page-link">Credits</a></strong>
+    </li>
+    <li>
+      <strong><a href="/mininet/mininet/wiki/Dhcp-masquerade-attack" class="wiki-page-link">Dhcp masquerade attack</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Documentation" class="wiki-page-link">Documentation</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Documentation-Plan" class="wiki-page-link">Documentation Plan</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Download" class="wiki-page-link">Download</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Environment-Setup" class="wiki-page-link">Environment Setup</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/FAQ" class="wiki-page-link">FAQ</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Feature-Requests" class="wiki-page-link">Feature Requests</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Futures" class="wiki-page-link">Futures</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/GSoC-2013" class="wiki-page-link">GSoC 2013</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Hotel-Internet-Service" class="wiki-page-link">Hotel Internet Service</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/how-to-define-the-bandwidth-of-the-port" class="wiki-page-link">how to define the bandwidth of the port</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Ideas" class="wiki-page-link">Ideas</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Installing-new-version-of-Open-vSwitch" class="wiki-page-link">Installing new version of Open vSwitch</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Introduction-to-Mininet" class="wiki-page-link">Introduction to Mininet</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Link-modeling-using-ns-3" class="wiki-page-link">Link modeling using ns 3</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mac-address-table-overflow-attack" class="wiki-page-link">Mac address table overflow attack</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mini-Edit-App" class="wiki-page-link">Mini Edit App</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Minievents:-A-mininet-Framework-to-define-events-in-mininet-networks" class="wiki-page-link">Minievents: A mininet Framework to define events in mininet networks</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet" class="wiki-page-link">Mininet</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-2.0.0-Testing-Plan-and-Projects" class="wiki-page-link">Mininet 2.0.0 Testing Plan and Projects</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-2.1.0-Release-Notes" class="wiki-page-link">Mininet 2.1.0 Release Notes</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-2.1.0-Remaining-Tasks" class="wiki-page-link">Mininet 2.1.0 Remaining Tasks</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-2.1.0-Test-Plan-and-Projects" class="wiki-page-link">Mininet 2.1.0 Test Plan and Projects</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-2.2.0-Release-Notes" class="wiki-page-link">Mininet 2.2.0 Release Notes</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-2.2.0-Remaining-Tasks" class="wiki-page-link">Mininet 2.2.0 Remaining Tasks</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-2.2.1-Release-Notes" class="wiki-page-link">Mininet 2.2.1 Release Notes</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-2.2.2-Release-Notes" class="wiki-page-link">Mininet 2.2.2 Release Notes</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-api-documentation" class="wiki-page-link">Mininet api documentation</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-Approach" class="wiki-page-link">Mininet Approach</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-Apps-and-Tools" class="wiki-page-link">Mininet Apps and Tools</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-Community-Extensions-and-Packages" class="wiki-page-link">Mininet Community Extensions and Packages</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-network-in-a-box-and-automatic-deployment-on-ec2" class="wiki-page-link">Mininet network in a box and automatic deployment on ec2</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-Python-Style" class="wiki-page-link">Mininet Python Style</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-SOSR-Software-Systems-Award-Talk" class="wiki-page-link">Mininet SOSR Software Systems Award Talk</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-system-testing" class="wiki-page-link">Mininet system testing</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Mininet-VM-Images" class="wiki-page-link">Mininet VM Images</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/NetSeminar-Announcement" class="wiki-page-link">NetSeminar Announcement</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Network-Address-Translator-(NAT)" class="wiki-page-link">Network Address Translator (NAT)</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Old-Feature-Requests" class="wiki-page-link">Old Feature Requests</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Old-VM-Creation-Notes" class="wiki-page-link">Old VM Creation Notes</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Pee-Wee-OSPF-(PWOSPF)" class="wiki-page-link">Pee Wee OSPF (PWOSPF)</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/problem-with-add-flow" class="wiki-page-link">problem with add flow</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Publications" class="wiki-page-link">Publications</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/question-for-mininet-command-xterm-and-contrller-ptcp:" class="wiki-page-link">question for mininet command xterm and contrller ptcp:</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Release-Plan" class="wiki-page-link">Release Plan</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/SIGCOMM-2014-Tutorial:-Teaching-Computer-Networking-with-Mininet" class="wiki-page-link">SIGCOMM 2014 Tutorial: Teaching Computer Networking with Mininet</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Simple-Router" class="wiki-page-link">Simple Router</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/SSL-on-Open-vSwitch-and-ovs-controller" class="wiki-page-link">SSL on Open vSwitch and ovs controller</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Support" class="wiki-page-link">Support</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Teaching-and-Learning-with-Mininet" class="wiki-page-link">Teaching and Learning with Mininet</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/Videos" class="wiki-page-link">Videos</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="/mininet/mininet/wiki/VM-Creation-Notes" class="wiki-page-link">VM Creation Notes</a></strong>
+    </li>
+    <li class="wiki-more-pages-link">
+      <a href="#" class="js-wiki-more-pages-link">
+        Show 51 more pages…
+      </a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+
+      <div class="gollum-markdown-content readability-sidebar box box-small">
+        <div class="wiki-custom-sidebar  markdown-body">
+          <ul>
+<li><a href="http://mininet.github.com">Mininet</a></li>
+<li><a href="http://mininet.github.com/download">Get Started</a></li>
+<li><a href="http://mininet.github.com/sample-workflow">Sample Workflow</a></li>
+<li><a href="http://mininet.github.com/walkthrough">Walkthrough</a></li>
+<li><a href="http://mininet.github.com/overview">Overview</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="http://mininet.github.com/download">Download</a></li>
+<li><a class="internal present" href="/mininet/mininet/wiki/Documentation">Documentation</a></li>
+<li><a class="internal present" href="/mininet/mininet/wiki/Videos">Videos</a></li>
+<li><a href="https://github.com/mininet/mininet">Source Code</a></li>
+<li><a class="internal present" href="/mininet/mininet/wiki/Mininet-Apps-and-Tools">Apps and Tools</a></li>
+<li><a class="internal present" href="/mininet/mininet/wiki/FAQ">FAQ </a></li>
+<li><a class="internal present" href="/mininet/mininet/wiki/Home">Wiki</a></li>
+<li><a class="internal present" href="/mininet/mininet/wiki/Teaching-and-Learning-with-Mininet">Teaching</a></li>
+<li><a class="internal present" href="/mininet/mininet/wiki/Publications">Papers</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="http://mininet.github.com/support">Support</a></li>
+<li><a href="http://mininet.github.com/contribute">Contribute</a></li>
+<li><a href="http://mininet.github.com/blog">News</a></li>
+<li><a href="http://mininet.github.com/credits">Credits</a></li>
+</ul>
+
+        </div>
+      </div>
+
+    <div class="clone-url">
+      <h5>Clone this wiki locally</h5>
+      <div class="input-group js-zeroclipboard-container">
+        <input type="text" class="form-control input-sm text-small text-gray input-monospace js-url-field js-zeroclipboard-target" aria-label="Clone URL for this wiki"
+               value="https://github.com/mininet/mininet.wiki.git" readonly="readonly">
+        <span class="input-group-button">
+          <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg></button>
+        </span>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div id="wiki-body" class="wiki-body gollum-markdown-content instapaper_body">
+      <div class="markdown-body">
+        <p>by Bob Lantz, Nikhil Handigol, Brandon Heller, and Vimal Jeyakumar</p>
+<p>This document is meant to give you a brief sense of what Mininet is and
+how it works, including a basic introduction to Mininet's
+Python API, the core of Mininet's functionality that you will usually want to use to create networks and run experiments.</p>
+<ul>
+<li><a href="#what">What is Mininet?</a></li>
+<li><a href="#why">Why is Mininet cool?</a></li>
+<li><a href="#limits">What are Mininet's limitations?</a></li>
+<li><a href="#working">Working with Mininet</a></li>
+<li><a href="#creating">Creating Topologies</a></li>
+<li><a href="#setting">Setting Performance Parameters</a></li>
+<li><a href="#running">Running Programs in Hosts</a></li>
+<li><a href="#popen">New: <code>popen()</code>/<code>pexec()</code> interface</a></li>
+<li><a href="#config">Host Configuration Methods</a></li>
+<li><a href="#naming">Naming in Mininet</a></li>
+<li><a href="#custom">Customizing <code>mn</code> using <code>--custom</code> files</a></li>
+<li><a href="#examples">Additional Examples</a></li>
+<li><a href="#apilevels">Understanding the Mininet API</a></li>
+<li><a href="#api">Mininet API Documentation</a></li>
+<li><a href="#measuring">Measuring Performance</a></li>
+<li><a href="#openflow">OpenFlow and Custom Routing</a></li>
+<li><a href="#controllers">OpenFlow Controllers</a></li>
+<li><a href="#extcontrollers">External Controllers</a></li>
+<li><a href="#multipath">Multipath Routing</a></li>
+<li><a href="#updating">Updating Mininet</a></li>
+<li><a href="#python">Learning Python</a></li>
+<li><a href="#background">Useful Background Information</a></li>
+<li><a href="#resources">Useful Python Resources</a></li>
+<li><a href="#how">How Does It Really Work? (optional: for the curious)</a></li>
+</ul>
+<p><a name="user-content-what"></a></p>
+<h2>
+<a id="user-content-what-is-mininet" class="anchor" href="#what-is-mininet" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is Mininet?</h2>
+<p>Mininet is a <em>network emulator</em>, or perhaps more precisely a
+<em>network emulation orchestration system</em>. It runs a collection of end-hosts,
+switches, routers, and links on a single Linux kernel. It uses
+lightweight virtualization to make a single system look like a complete
+network, running the same kernel, system, and user code. A Mininet host
+behaves just like a real machine; you can <code>ssh</code> into it (if you start up
+<code>sshd</code> and bridge the network to your host) and run arbitrary programs
+(including anything that is installed on the underlying Linux system.)
+The programs you run can send packets through what seems like a real
+Ethernet interface, with a given link speed and delay. Packets get
+processed by what looks like a real Ethernet switch, router, or
+middlebox, with a given amount of queueing. When two programs, like an
+<code>iperf</code> client and server, communicate through Mininet, the measured
+performance should match that of two (slower) native machines.</p>
+<p>In short, Mininet's virtual hosts, switches, links, and controllers
+are the real thing – they are just created using software rather than
+hardware – and for the most part their behavior is similar to discrete
+hardware elements. It is usually possible to create a Mininet network
+that resembles a hardware network, or a hardware network that resembles
+a Mininet network, and to run the same binary code and applications on
+either platform.</p>
+<p><a name="user-content-why"></a></p>
+<h2>
+<a id="user-content-why-is-mininet-cool" class="anchor" href="#why-is-mininet-cool" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Why is Mininet cool?</h2>
+<ol start="0">
+<li>
+<p>It's <strong>fast</strong> - starting up a simple network takes just a few seconds.
+This means that your run-edit-debug loop can be very quick.</p>
+</li>
+<li>
+<p>You can <strong>create custom topologies</strong>: a single switch, larger
+Internet-like topologies, the Stanford backbone, a data center, or
+anything else.</p>
+</li>
+<li>
+<p>You can <strong>run real programs</strong>: anything that runs on Linux is available
+for you to run, from web servers to TCP window monitoring tools to
+Wireshark.</p>
+</li>
+<li>
+<p>You can <strong>customize packet forwarding</strong>: Mininet's switches are
+programmable using the OpenFlow protocol. Custom Software-Defined
+Network designs that run in Mininet can easily be transferred to
+hardware OpenFlow switches for line-rate packet forwarding.</p>
+</li>
+<li>
+<p>You can <strong>run Mininet on your laptop</strong>, on a server, in a VM, on a native
+Linux box (Mininet is included with Ubuntu 12.10+!), or in the cloud
+(e.g. Amazon EC2.)</p>
+</li>
+<li>
+<p>You can <strong>share and replicate results</strong>: anyone with a computer can run
+your code once you've packaged it up.</p>
+</li>
+<li>
+<p>You can <strong>use it easily</strong>: you can create and run Mininet experiments by
+writing simple (or complex if necessary) Python scripts.</p>
+</li>
+<li>
+<p>Mininet is an <strong>open source project</strong>, so you are encouraged to examine
+its source code on <a href="https://github.com/mininet">https://github.com/mininet</a>, modify it, fix bugs,
+file issues/feature requests, and submit patches/pull requests. You may also
+edit this documentation to fix any errors or add clarifications or additional
+information.</p>
+</li>
+<li>
+<p>Mininet is <strong>under active development</strong>. So, if it sucks, doesn't make sense,
+or doesn't work for some reason, please let us know on <code>mininet-discuss</code>
+and the Mininet user and developer community can try to explain it,
+fix it, or help you fix it. :-) If you find bugs, you are encouraged to
+submit patches to fix them, or at least to submit an issue on github
+including a reproducible test case.</p>
+</li>
+</ol>
+<p><a name="user-content-limits"></a></p>
+<h2>
+<a id="user-content-what-are-mininets-limitations" class="anchor" href="#what-are-mininets-limitations" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What are Mininet's limitations?</h2>
+<p>Although we think Mininet is great, it does have some limitations.
+For example,</p>
+<ul>
+<li>
+<p>Running on a single system is convenient, but it imposes resource
+limits: if your server has 3 GHz of CPU and can switch about 10 Gbps
+of simulated traffic, those resources will need to be balanced and
+shared among your virtual hosts and switches.</p>
+</li>
+<li>
+<p>Mininet uses a single Linux kernel for all virtual hosts; this means
+that you can't run software that depends on BSD, Windows, or other
+operating system kernels. (Although you can attach VMs to Mininet.)</p>
+</li>
+<li>
+<p>Mininet won't write your OpenFlow controller for you; if you need
+custom routing or switching behavior, you will need to find or develop
+a controller with the features you require.</p>
+</li>
+<li>
+<p>By default your Mininet network is isolated from your LAN and from
+the internet - this is usually a good thing! However, you may use the
+<code>NAT</code> object and/or the <code>--nat</code> option to connect your Mininet network
+to your LAN via Network Address Translation. You can also attach a real
+(or virtual) hardware interface to your Mininet network (see
+<code>examples/hwintf.py</code> for details.)</p>
+</li>
+<li>
+<p>By default all Mininet hosts share the host file system and PID space;
+this means that you may have to be careful if you are running daemons
+that require configuration in /etc, and you need to be careful that
+you don't kill the wrong processes by mistake. (Note the <code>bind.py</code>
+example demonstrates how to have per-host private directories.)</p>
+</li>
+<li>
+<p>Unlike a simulator, Mininet doesn't have a strong notion of virtual
+time; this means that timing measurements will be based on real time,
+and that faster-than-real-time results (e.g. 100 Gbps networks) cannot
+easily be emulated.</p>
+</li>
+</ul>
+<p><em>An aside on performance: The main thing you have to keep in mind for network-
+limited experiments is that you will probably need to use slower links,
+for example 10 or 100 Mb/sec rather than 10 Gb/sec, due to the fact that
+packets are forwarded by a collection of software switches (e.g. Open
+vSwitch) that share CPU and memory resources and usually have lower
+performance than dedicated switching hardware. For CPU-limited experiments,
+you will also need to make sure that you carefully limit the CPU bandwidth
+of your Mininet hosts. If you mainly care about functional correctness, you can
+run Mininet without specific bandwidth limits - this is the quick and
+easy way to run Mininet, and it also provides the highest performance
+at the expense of timing accuracy under load.</em></p>
+<p>With a few exceptions, many limitations you may run into will not be
+intrinsic to Mininet; eliminating them may simply be a matter of code, and you
+are encouraged to contribute any enhancements you may develop!</p>
+<p><a name="user-content-working"></a></p>
+<h2>
+<a id="user-content-working-with-mininet" class="anchor" href="#working-with-mininet" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Working with Mininet</h2>
+<p>The following sections describe several features of Mininet (and its
+Python API) which you may find useful.</p>
+<p><a name="user-content-creating"></a></p>
+<h3>
+<a id="user-content-creating-topologies" class="anchor" href="#creating-topologies" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating Topologies</h3>
+<p>Mininet supports <em>parametrized topologies</em>. With a few lines of Python
+code, you can create a flexible topology which can be configured based
+on the parameters you pass into it, and reused for multiple experiments.</p>
+<p>For example, here is a simple network topology (based on
+<code>mininet/topo.py:SingleSwitchTopo</code>) which consists of a specified number
+of hosts (<code>h1</code> through <code>hN</code>) connected to a single switch (<code>s1</code>):</p>
+<p>Note that this is the recommended (simplified) topology syntax introduced
+in Mininet 2.2:</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-c"><span class="pl-c">#</span>!/usr/bin/python                                                                            </span>
+                                                                                             
+<span class="pl-k">from</span> mininet.topo <span class="pl-k">import</span> Topo
+<span class="pl-k">from</span> mininet.net <span class="pl-k">import</span> Mininet
+<span class="pl-k">from</span> mininet.util <span class="pl-k">import</span> dumpNodeConnections
+<span class="pl-k">from</span> mininet.log <span class="pl-k">import</span> setLogLevel
+
+<span class="pl-k">class</span> <span class="pl-en">SingleSwitchTopo</span>(<span class="pl-e">Topo</span>):
+    <span class="pl-s"><span class="pl-pds">"</span>Single switch connected to n hosts.<span class="pl-pds">"</span></span>
+    <span class="pl-k">def</span> <span class="pl-en">build</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>, <span class="pl-smi">n</span><span class="pl-k">=</span><span class="pl-c1">2</span>):
+        switch <span class="pl-k">=</span> <span class="pl-c1">self</span>.addSwitch(<span class="pl-s"><span class="pl-pds">'</span>s1<span class="pl-pds">'</span></span>)
+        <span class="pl-c"><span class="pl-c">#</span> Python's range(N) generates 0..N-1</span>
+        <span class="pl-k">for</span> h <span class="pl-k">in</span> <span class="pl-c1">range</span>(n):
+            host <span class="pl-k">=</span> <span class="pl-c1">self</span>.addHost(<span class="pl-s"><span class="pl-pds">'</span>h<span class="pl-c1">%s</span><span class="pl-pds">'</span></span> <span class="pl-k">%</span> (h <span class="pl-k">+</span> <span class="pl-c1">1</span>))
+            <span class="pl-c1">self</span>.addLink(host, switch)
+
+<span class="pl-k">def</span> <span class="pl-en">simpleTest</span>():
+    <span class="pl-s"><span class="pl-pds">"</span>Create and test a simple network<span class="pl-pds">"</span></span>
+    topo <span class="pl-k">=</span> SingleSwitchTopo(<span class="pl-v">n</span><span class="pl-k">=</span><span class="pl-c1">4</span>)
+    net <span class="pl-k">=</span> Mininet(topo)
+    net.start()
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Dumping host connections<span class="pl-pds">"</span></span>
+    dumpNodeConnections(net.hosts)
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Testing network connectivity<span class="pl-pds">"</span></span>
+    net.pingAll()
+    net.stop()
+
+<span class="pl-k">if</span> <span class="pl-c1">__name__</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>__main__<span class="pl-pds">'</span></span>:
+    <span class="pl-c"><span class="pl-c">#</span> Tell mininet to print useful information</span>
+    setLogLevel(<span class="pl-s"><span class="pl-pds">'</span>info<span class="pl-pds">'</span></span>)
+    simpleTest()</pre></div>
+<p>Important classes, methods, functions and variables in the above code
+include:</p>
+<p><code>Topo</code>: the base class for Mininet topologies</p>
+<p><code>build()</code>: The method to override in your topology class. Constructor parameters (<code>n</code>) will be passed through to it automatically by <code>Topo.__init__()</code>.</p>
+<p><code>addSwitch()</code>: adds a switch to a topology and returns the switch name</p>
+<p><code>addHost()</code>: adds a host to a topology and returns the host name</p>
+<p><code>addLink()</code>: adds a bidirectional link to a topology (and returns a link key, but this is not important).  Links in Mininet are bidirectional unless noted otherwise.</p>
+<p><code>Mininet</code>: main class to create and manage a network</p>
+<p><code>start()</code>: starts your network</p>
+<p><code>pingAll()</code>: tests connectivity by trying to have all nodes ping each
+other</p>
+<p><code>stop()</code>: stops your network</p>
+<p><code>net.hosts</code>: all the hosts in a network</p>
+<p><code>dumpNodeConnections()</code>: dumps connections to/from a set of nodes.</p>
+<p><code>setLogLevel( 'info' | 'debug' | 'output' )</code>: set Mininet's default output
+level; 'info' is recommended as it provides useful information.</p>
+<p>Additional example code may be found in <a href="https://github.com/mininet/mininet/tree/master/examples"><code>mininet/examples</code></a>.</p>
+<p><strong>Note for earlier Mininet Versions</strong>
+The topology API has changed slightly across different versions of Mininet. In 1.0, methods such as <code>addSwitch</code> and <code>addHost</code> were called <code>add_switch</code> and <code>add_host</code>. Additionally, in both 1.0 and 2.0, the preferred method to override was <code>__init__</code> rather than <code>build</code>:</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">class</span> <span class="pl-en">SingleSwitchTopo</span>(<span class="pl-e">Topo</span>):
+    <span class="pl-s"><span class="pl-pds">"</span>Single switch connected to n hosts.<span class="pl-pds">"</span></span>
+    <span class="pl-k">def</span> <span class="pl-c1">__init__</span>(<span class="pl-smi"><span class="pl-smi">self</span></span>, <span class="pl-smi">n</span><span class="pl-k">=</span><span class="pl-c1">2</span>, <span class="pl-k">**</span><span class="pl-smi">opts</span>):
+        <span class="pl-c"><span class="pl-c">#</span> Initialize topology and default options</span>
+        Topo.<span class="pl-c1">__init__</span>(<span class="pl-c1">self</span>, <span class="pl-k">**</span>opts)
+        switch <span class="pl-k">=</span> <span class="pl-c1">self</span>.addSwitch(<span class="pl-s"><span class="pl-pds">'</span>s1<span class="pl-pds">'</span></span>)
+        <span class="pl-c"><span class="pl-c">#</span> Python's range(N) generates 0..N-1</span>
+        <span class="pl-k">for</span> h <span class="pl-k">in</span> <span class="pl-c1">range</span>(n):
+            host <span class="pl-k">=</span> <span class="pl-c1">self</span>.addHost(<span class="pl-s"><span class="pl-pds">'</span>h<span class="pl-c1">%s</span><span class="pl-pds">'</span></span> <span class="pl-k">%</span> (h <span class="pl-k">+</span> <span class="pl-c1">1</span>))
+            <span class="pl-c1">self</span>.addLink(host, switch)</pre></div>
+<h3>
+<a id="user-content-script-output" class="anchor" href="#script-output" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Script output</h3>
+<p>Running this script should result in something like the following:</p>
+<pre><code>$ sudo python simpletest.py
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s1) (h4, s1) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 1 switches
+s1 ...
+Dumping host connections
+h1 h1-eth0:s1-eth1
+h2 h2-eth0:s1-eth2
+h3 h3-eth0:s1-eth3
+h4 h4-eth0:s1-eth4
+Testing network connectivity
+*** Ping: testing ping reachability
+h1 -&gt; h2 h3 h4 
+h2 -&gt; h1 h3 h4 
+h3 -&gt; h1 h2 h4 
+h4 -&gt; h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+*** Stopping 1 controllers
+c0 
+*** Stopping 4 links
+....
+*** Stopping 1 switches
+s1 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+</code></pre>
+<p><a name="user-content-setting"></a></p>
+<h3>
+<a id="user-content-setting-performance-parameters" class="anchor" href="#setting-performance-parameters" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting Performance Parameters</h3>
+<p>In addition to basic behavioral networking, Mininet provides performance
+limiting and isolation features, through the <code>CPULimitedHost</code> and <code>TCLink</code>
+classes.</p>
+<p>There are multiple ways that these classes may be used, but one simple
+way is to specify them as the default host and link classes/constructors
+to <code>Mininet()</code>, and then to specify the appropriate parameters in the
+topology. (You could also specify custom classes in the topology itself,
+or create custom node and link constructors and/or subclasses.)</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-c"><span class="pl-c">#</span>!/usr/bin/python</span>
+
+<span class="pl-k">from</span> mininet.topo <span class="pl-k">import</span> Topo
+<span class="pl-k">from</span> mininet.net <span class="pl-k">import</span> Mininet
+<span class="pl-k">from</span> mininet.node <span class="pl-k">import</span> CPULimitedHost
+<span class="pl-k">from</span> mininet.link <span class="pl-k">import</span> TCLink
+<span class="pl-k">from</span> mininet.util <span class="pl-k">import</span> dumpNodeConnections
+<span class="pl-k">from</span> mininet.log <span class="pl-k">import</span> setLogLevel
+
+<span class="pl-k">class</span> <span class="pl-en">SingleSwitchTopo</span>( <span class="pl-e">Topo</span> ):
+    <span class="pl-s"><span class="pl-pds">"</span>Single switch connected to n hosts.<span class="pl-pds">"</span></span>
+    <span class="pl-k">def</span> <span class="pl-en">build</span>( <span class="pl-smi"><span class="pl-smi">self</span></span>, <span class="pl-smi">n</span><span class="pl-k">=</span><span class="pl-c1">2</span> ):
+	switch <span class="pl-k">=</span> <span class="pl-c1">self</span>.addSwitch( <span class="pl-s"><span class="pl-pds">'</span>s1<span class="pl-pds">'</span></span> )
+	<span class="pl-k">for</span> h <span class="pl-k">in</span> <span class="pl-c1">range</span>(n):
+	    <span class="pl-c"><span class="pl-c">#</span> Each host gets 50%/n of system CPU</span>
+	    host <span class="pl-k">=</span> <span class="pl-c1">self</span>.addHost( <span class="pl-s"><span class="pl-pds">'</span>h<span class="pl-c1">%s</span><span class="pl-pds">'</span></span> <span class="pl-k">%</span> (h <span class="pl-k">+</span> <span class="pl-c1">1</span>),
+		                 <span class="pl-v">cpu</span><span class="pl-k">=</span><span class="pl-c1">.5</span><span class="pl-k">/</span>n )
+	    <span class="pl-c"><span class="pl-c">#</span> 10 Mbps, 5ms delay, 2% loss, 1000 packet queue</span>
+	    <span class="pl-c1">self</span>.addLink( host, switch, <span class="pl-v">bw</span><span class="pl-k">=</span><span class="pl-c1">10</span>, <span class="pl-v">delay</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>5ms<span class="pl-pds">'</span></span>, <span class="pl-v">loss</span><span class="pl-k">=</span><span class="pl-c1">2</span>,
+                          <span class="pl-v">max_queue_size</span><span class="pl-k">=</span><span class="pl-c1">1000</span>, <span class="pl-v">use_htb</span><span class="pl-k">=</span><span class="pl-c1">True</span> )
+
+<span class="pl-k">def</span> <span class="pl-en">perfTest</span>():
+    <span class="pl-s"><span class="pl-pds">"</span>Create network and run simple performance test<span class="pl-pds">"</span></span>
+    topo <span class="pl-k">=</span> SingleSwitchTopo( <span class="pl-v">n</span><span class="pl-k">=</span><span class="pl-c1">4</span> )
+    net <span class="pl-k">=</span> Mininet( <span class="pl-v">topo</span><span class="pl-k">=</span>topo,
+	           <span class="pl-v">host</span><span class="pl-k">=</span>CPULimitedHost, <span class="pl-v">link</span><span class="pl-k">=</span>TCLink )
+    net.start()
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Dumping host connections<span class="pl-pds">"</span></span>
+    dumpNodeConnections( net.hosts )
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Testing network connectivity<span class="pl-pds">"</span></span>
+    net.pingAll()
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Testing bandwidth between h1 and h4<span class="pl-pds">"</span></span>
+    h1, h4 <span class="pl-k">=</span> net.get( <span class="pl-s"><span class="pl-pds">'</span>h1<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>h4<span class="pl-pds">'</span></span> )
+    net.iperf( (h1, h4) )
+    net.stop()
+
+<span class="pl-k">if</span> <span class="pl-c1">__name__</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>__main__<span class="pl-pds">'</span></span>:
+    setLogLevel( <span class="pl-s"><span class="pl-pds">'</span>info<span class="pl-pds">'</span></span> )
+    perfTest()</pre></div>
+<p>Important methods and parameters:</p>
+<p><code>self.addHost(name, cpu=f)</code>:</p>
+<p>This allows you to specify a fraction of overall system CPU resources
+which will be allocated to the virtual host.</p>
+<p><code>self.addLink( node1, node2, bw=10, delay='5ms', max_queue_size=1000, loss=10, use_htb=True)</code>:
+adds a bidirectional link with bandwidth, delay and loss characteristics, with a maximum
+queue size of 1000 packets using the Hierarchical Token Bucket rate limiter
+and netem delay/loss emulator.  The parameter <code>bw</code> is expressed as a number in Mbit; <code>delay</code> is expressed as a string with units in place (e.g. '5ms', '100us', '1s'); <code>loss</code> is expressed as a percentage (between 0 and 100); and <code>max_queue_size</code> is expressed in packets.</p>
+<p>You may find it useful to create a Python dictionary to make it easy to
+pass the same parameters into multiple method calls, for example:</p>
+<div class="highlight highlight-source-python"><pre>     linkopts <span class="pl-k">=</span> <span class="pl-c1">dict</span>(<span class="pl-v">bw</span><span class="pl-k">=</span><span class="pl-c1">10</span>, <span class="pl-v">delay</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>5ms<span class="pl-pds">'</span></span>, <span class="pl-v">loss</span><span class="pl-k">=</span><span class="pl-c1">10</span>, <span class="pl-v">max_queue_size</span><span class="pl-k">=</span><span class="pl-c1">1000</span>, <span class="pl-v">use_htb</span><span class="pl-k">=</span><span class="pl-c1">True</span>)
+     <span class="pl-c"><span class="pl-c">#</span> (or you can use brace syntax: linkopts = {'bw':10, 'delay':'5ms', ... } )</span>
+     <span class="pl-c1">self</span>.addLink(node1, node2, <span class="pl-k">**</span>linkopts)</pre></div>
+<p>This same technique <code>(**dict)</code> is useful for passing options to
+Matplotlib and other libraries.</p>
+<p><code>net.get()</code>: retrieves a node (host or switch) object by name.
+This is important if you want to send a command to a host (e.g. using
+<code>host.cmd()</code>) and get its output.</p>
+<p>Note: In the current master branch of Mininet, you can simply use
+braces (e.g. <code>net['h1']</code>) to retrieve a given node by name.</p>
+<p><a name="user-content-running"></a></p>
+<h3>
+<a id="user-content-running-programs-in-hosts" class="anchor" href="#running-programs-in-hosts" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running Programs in Hosts</h3>
+<p>One of the most important things you will need to do in your experiments
+is run programs in hosts, so that you can run more tests than the simple
+<code>pingAll()</code> and <code>iperf()</code> tests which are provided by Mininet itself.</p>
+<p>Each Mininet host is essentially a bash shell process attached to one or
+more network interfaces, so the easiest way to interact with it is to
+send input to the shell using the cmd() method.</p>
+<p>To run a command in a host and get the output, use the <code>cmd()</code> method.</p>
+<div class="highlight highlight-source-python"><pre>    h1 <span class="pl-k">=</span> net.get(<span class="pl-s"><span class="pl-pds">'</span>h1<span class="pl-pds">'</span></span>)	
+    result <span class="pl-k">=</span> h1.cmd(<span class="pl-s"><span class="pl-pds">'</span>ifconfig<span class="pl-pds">'</span></span>)
+    <span class="pl-c1">print</span> result</pre></div>
+<p>In many cases, you will wish to run a command in the background for a
+while, stop the command, and save its output to a file:</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> time <span class="pl-k">import</span> sleep
+<span class="pl-c1">...</span>
+<span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Starting test...<span class="pl-pds">"</span></span>
+h1.cmd(<span class="pl-s"><span class="pl-pds">'</span>while true; do date; sleep 1; done &gt; /tmp/date.out &amp;<span class="pl-pds">'</span></span>)
+sleep(<span class="pl-c1">10</span>)
+<span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Stopping test<span class="pl-pds">"</span></span>
+h1.cmd(<span class="pl-s"><span class="pl-pds">'</span>kill %while<span class="pl-pds">'</span></span>)
+<span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Reading output<span class="pl-pds">"</span></span>
+f <span class="pl-k">=</span> <span class="pl-c1">open</span>(<span class="pl-s"><span class="pl-pds">'</span>/tmp/date.out<span class="pl-pds">'</span></span>)
+lineno <span class="pl-k">=</span> <span class="pl-c1">1</span>
+<span class="pl-k">for</span> line <span class="pl-k">in</span> f.readlines():
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-c1">%d</span>: <span class="pl-c1">%s</span><span class="pl-pds">"</span></span> <span class="pl-k">%</span> ( lineno, line.strip() )
+    lineno <span class="pl-k">+=</span> <span class="pl-c1">1</span>
+f.close()</pre></div>
+<p>Note that we used the shell's output redirection feature to send output
+to <code>/tmp/date.out</code>, the background execution feature <code>&amp;</code> of the shell to
+run the command in the background, and job control <code>kill %while</code> to shut
+down the program that is running in the background. Unfortunately, if
+you leave jobs running in the background they are not guaranteed to stop
+if Mininet exits (either intentionally or due to an error), so you will
+need to make sure that you stop all of your jobs cleanly. You may wish
+to use the ps command periodically to make sure that no zombie jobs are
+mindlessly marching onward and slowing down your EC2 instance.</p>
+<p>(Note: Python strings may be delimited using either single or double
+quotes. The example above uses double quotes in print statements and
+single quotes for function arguments, but you can do whatever you like.
+Python's print statement exists for convenience and possibly to help
+BASIC programmers feel more at home.)</p>
+<p>Having a shell process at your disposal makes it easy to perform other
+tasks as well. For example, you can find out the PID of a background
+command using</p>
+<div class="highlight highlight-source-python"><pre>pid <span class="pl-k">=</span> <span class="pl-c1">int</span>( h1.cmd(<span class="pl-s"><span class="pl-pds">'</span>echo $!<span class="pl-pds">'</span></span>) )</pre></div>
+<p>Then you can wait for a particular process to finish execution by using
+wait, e.g.:</p>
+<div class="highlight highlight-source-python"><pre>h1.cmd(<span class="pl-s"><span class="pl-pds">'</span>wait<span class="pl-pds">'</span></span>, pid)</pre></div>
+<p>Note that this will only work for UNIX commands and not for commands
+(e.g. <code>while</code>, <code>cd</code>) which are built into the bash shell itself (and don't
+have a separate pid!) Note also that each of these commands executed in
+the foreground (no <code>&amp;</code>) rather than the background (<code>&amp;</code>) since we want
+to get the output.</p>
+<p>[Editorial: UNIX's (and <code>bash</code>'s) abbreviations and special characters (<code>$</code>, <code>!</code>, <code>&amp;</code>) date back to the days of blazingly fast 300 bit per second "networks" and
+Teletype™ terminals that printed on paper as you typed. Linux stuck with
+them for compatibility and because humans still type slowly. <code>bash</code>
+sometimes provides more verbose equivalents, if you wish to use them.]</p>
+<p>In addition to using the shell's wait mechanism, Mininet itself allows
+you to start a foreground command using <code>sendCmd()</code> and then wait for it
+to complete at some later time using <code>waitOutput()</code>:</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">for</span> h <span class="pl-k">in</span> hosts:
+    h.sendCmd(<span class="pl-s"><span class="pl-pds">'</span>sleep 20<span class="pl-pds">'</span></span>)
+…
+results <span class="pl-k">=</span> {}
+<span class="pl-k">for</span> h <span class="pl-k">in</span> hosts:
+    results[h.name] <span class="pl-k">=</span> h.waitOutput()</pre></div>
+<p>If you are sending output to a file, you may wish to monitor that file's
+contents interactively while your test is running. The
+<a href="https://github.com/mininet/mininet/tree/master/examples/multipoll.py"><code>examples/multipoll.py</code></a>
+example provides a function <code>monitorFiles()</code> which
+implements one possible mechanism for monitoring multiple output files.
+This simplifies the implementation of a test which interactively
+monitors output from multiple hosts:</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">def</span> <span class="pl-en">monitorTest</span>( <span class="pl-smi">N</span><span class="pl-k">=</span><span class="pl-c1">3</span>, <span class="pl-smi">seconds</span><span class="pl-k">=</span><span class="pl-c1">3</span> ):
+    <span class="pl-s"><span class="pl-pds">"</span>Run pings and monitor multiple hosts<span class="pl-pds">"</span></span>
+    topo <span class="pl-k">=</span> SingleSwitchTopo( N )
+    net <span class="pl-k">=</span> Mininet( topo )
+    net.start()
+    hosts <span class="pl-k">=</span> net.hosts
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Starting test...<span class="pl-pds">"</span></span>
+    server <span class="pl-k">=</span> hosts[ <span class="pl-c1">0</span> ]
+    outfiles, errfiles <span class="pl-k">=</span> {}, {}
+    <span class="pl-k">for</span> h <span class="pl-k">in</span> hosts:
+        <span class="pl-c"><span class="pl-c">#</span> Create and/or erase output files</span>
+        outfiles[ h ] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>/tmp/<span class="pl-c1">%s</span>.out<span class="pl-pds">'</span></span> <span class="pl-k">%</span> h.name
+        errfiles[ h ] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>/tmp/<span class="pl-c1">%s</span>.err<span class="pl-pds">'</span></span> <span class="pl-k">%</span> h.name
+        h.cmd( <span class="pl-s"><span class="pl-pds">'</span>echo &gt;<span class="pl-pds">'</span></span>, outfiles[ h ] )
+        h.cmd( <span class="pl-s"><span class="pl-pds">'</span>echo &gt;<span class="pl-pds">'</span></span>, errfiles[ h ] )
+        <span class="pl-c"><span class="pl-c">#</span> Start pings</span>
+        h.cmdPrint(<span class="pl-s"><span class="pl-pds">'</span>ping<span class="pl-pds">'</span></span>, server.IP(),
+                   <span class="pl-s"><span class="pl-pds">'</span>&gt;<span class="pl-pds">'</span></span>, outfiles[ h ],
+                   <span class="pl-s"><span class="pl-pds">'</span>2&gt;<span class="pl-pds">'</span></span>, errfiles[ h ],
+                   <span class="pl-s"><span class="pl-pds">'</span>&amp;<span class="pl-pds">'</span></span> )
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Monitoring output for<span class="pl-pds">"</span></span>, seconds, <span class="pl-s"><span class="pl-pds">"</span>seconds<span class="pl-pds">"</span></span>
+    <span class="pl-k">for</span> h, line <span class="pl-k">in</span> monitorFiles( outfiles, seconds, <span class="pl-v">timeoutms</span><span class="pl-k">=</span><span class="pl-c1">500</span> ):
+        <span class="pl-k">if</span> h:
+            <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-c1">%s</span>: <span class="pl-c1">%s</span><span class="pl-pds">'</span></span> <span class="pl-k">%</span> ( h.name, line )
+    <span class="pl-k">for</span> h <span class="pl-k">in</span> hosts:
+        h.cmd(<span class="pl-s"><span class="pl-pds">'</span>kill %ping<span class="pl-pds">'</span></span>)
+    net.stop()</pre></div>
+<p>You may wish to run <code>multipoll.py</code> and look at its output.</p>
+<p>Another example, <a href="https://github.com/mininet/mininet/tree/master/examples/multiping.py"><code>examples/multiping.py</code></a>
+demonstrates a different (perhaps
+simpler but less flexible) approach to monitoring standard output from a
+host, using the <code>Node.monitor()</code> method, so you may wish to look at it as
+well.</p>
+<p><a name="user-content-popen"></a></p>
+<h3>
+<a id="user-content-new-popenpexec-interface" class="anchor" href="#new-popenpexec-interface" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New: <code>popen()</code>/<code>pexec()</code> interface</h3>
+<p>In addition to the shell-based mechanism of <code>cmd()</code>/<code>sendCmd()</code>, Mininet now
+also supports a pipe-based interface which returns standard Python
+<code>Popen()</code> objects (see Python's subprocess module for details.) This
+mechanism is newer and not as well-tested as the <code>cmd()</code> mechanism, but
+you may find it convenient for running multiple processes in the
+background and monitoring their output. A <code>pmonitor()</code> function is
+provided to make monitoring multiple <code>Popen()</code> objects even easier.</p>
+<blockquote>
+<p>Warning: in Mininet 2.0.0, <code>pmonitor()</code> may return a number of blank
+lines after receiving EOFs. This should now be fixed in the master branch.</p>
+</blockquote>
+<p>The code in <a href="https://github.com/mininet/mininet/tree/master/examples/popenpoll.py"><code>examples/popenpoll.py</code></a> implements the functionality similar to
+what is described above, using the <code>popen()</code> interface and <code>pmonitor()</code>
+helper function:</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">def</span> <span class="pl-en">pmonitorTest</span>( <span class="pl-smi">N</span><span class="pl-k">=</span><span class="pl-c1">3</span>, <span class="pl-smi">seconds</span><span class="pl-k">=</span><span class="pl-c1">10</span> ):
+    <span class="pl-s"><span class="pl-pds">"</span>Run pings and monitor multiple hosts using pmonitor<span class="pl-pds">"</span></span>
+    topo <span class="pl-k">=</span> SingleSwitchTopo( N )
+    net <span class="pl-k">=</span> Mininet( topo )
+    net.start()
+    hosts <span class="pl-k">=</span> net.hosts
+    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Starting test...<span class="pl-pds">"</span></span>
+    server <span class="pl-k">=</span> hosts[ <span class="pl-c1">0</span> ]
+    popens <span class="pl-k">=</span> {}
+    <span class="pl-k">for</span> h <span class="pl-k">in</span> hosts:
+        popens[ h ] <span class="pl-k">=</span> h.popen(<span class="pl-s"><span class="pl-pds">'</span>ping<span class="pl-pds">'</span></span>, server.IP() )
+        <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Monitoring output for<span class="pl-pds">"</span></span>, seconds, <span class="pl-s"><span class="pl-pds">"</span>seconds<span class="pl-pds">"</span></span>
+        endTime <span class="pl-k">=</span> time() <span class="pl-k">+</span> seconds
+        <span class="pl-k">for</span> h, line <span class="pl-k">in</span> pmonitor( popens, <span class="pl-v">timeoutms</span><span class="pl-k">=</span><span class="pl-c1">500</span> ):
+            <span class="pl-k">if</span> h:
+                <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-c1">%s</span>: <span class="pl-c1">%s</span><span class="pl-pds">'</span></span> <span class="pl-k">%</span> ( h.name, line ),
+                <span class="pl-k">if</span> time() <span class="pl-k">&gt;=</span> endTime:
+                    <span class="pl-k">for</span> p <span class="pl-k">in</span> popens.values():
+                        p.send_signal( <span class="pl-c1">SIGINT</span> )
+        net.stop()</pre></div>
+<p>Note this implementation is slightly different since it pulls the time
+management out of the helper function, but this enables <code>pmonitor()</code> to
+catch <code>ping</code>'s output after it is interrupted.</p>
+<p>Of course, you do not have to use <code>pmonitor()</code> - you can use
+<code>Popen.communicate()</code> (as long as you don't have too many file
+descriptors) or <code>select.poll()</code> or any other mechanism that works.</p>
+<p>If you find bugs in the <code>popen()</code> interface, please let us know.</p>
+<h3>
+<a id="user-content-important-shared-filesystem" class="anchor" href="#important-shared-filesystem" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Important: Shared Filesystem!</h3>
+<p>One thing to keep in mind is that by default Mininet hosts <em>share the
+root filesystem</em> of the underlying server. Usually this is a very good thing,
+since it is a huge pain (and slow) to create a separate filesystem for each
+Mininet host (which you can do if you like and then chroot into it!)</p>
+<p>Sharing the root filesystem also means that you almost never need to copy
+data between Mininet hosts because it's already there.</p>
+<p>One side-effect of this however is that hosts share the Mininet server's
+<code>/etc</code> directory. This means that if you require specific configuration for
+a program (e.g. <code>httpd</code>) then you may need to create different configuration
+files for each Mininet host and specify them as startup options to the program
+that you are running.</p>
+<p>Another side-effect is that you can have file collisions if you try to create
+the same file in the same directory on multiple hosts.</p>
+<p>If you need per-host private directories, you can specify them as options to <code>Host</code>,
+for example:</p>
+<pre><code>h = Host( 'h1', privateDirs=[ '/some/directory' ] )
+</code></pre>
+<p>See <code>examples/bind.py</code> for more information.</p>
+<p><a name="user-content-config"></a></p>
+<h3>
+<a id="user-content-host-configuration-methods" class="anchor" href="#host-configuration-methods" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Host Configuration Methods</h3>
+<p>Mininet hosts provide a number of convenience methods for network
+configuration:</p>
+<ol>
+<li>
+<code>IP()</code>: Return IP address of a host or specific interface.</li>
+<li>
+<code>MAC()</code>: Return MAC address of a host or specific interface.</li>
+<li>
+<code>setARP()</code>: Add a static ARP entry to a host's ARP
+cache.</li>
+<li>
+<code>setIP()</code>: Set the IP address for a host or specific interface.</li>
+<li>
+<code>setMAC()</code>: Set the MAC address for a host or specific interface</li>
+</ol>
+<p>For example:</p>
+<div class="highlight highlight-source-python"><pre>    <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">"</span>Host<span class="pl-pds">"</span></span>, h1.name, <span class="pl-s"><span class="pl-pds">"</span>has IP address<span class="pl-pds">"</span></span>, h1.IP(), <span class="pl-s"><span class="pl-pds">"</span>and MAC address<span class="pl-pds">"</span></span>, h1.MAC()</pre></div>
+<p>In each case, if you do not provide a specific interface (e.g. <code>h1-eth0</code>
+or an interface object) the method will use the host's default
+interface. The above functions are defined in mininet/node.py.</p>
+<p><a name="user-content-naming"></a></p>
+<h3>
+<a id="user-content-naming-in-mininet" class="anchor" href="#naming-in-mininet" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Naming in Mininet</h3>
+<p>In order to use Mininet effectively, it is important to understand its
+naming scheme for hosts, switches and interfaces. Usually, hosts are
+called <code>h1..hN</code> and switches are called <code>s1..sN</code>. We recommend that you
+follow this convention or a similar one. For clarity,
+interfaces belonging to a node are named beginning with the node's name,
+for example <code>h1-eth0</code> is host <code>h1</code>'s default interface, and <code>s1-eth1</code> is
+switch <code>s1</code>'s first data port. Host interfaces are only visible from
+within the host itself, but switch data ports are visible in the "root"
+namespace (you can see them by typing <code>ip link show</code> in another window
+while Mininet is running.) As a result, it's easy to examine switch
+interfaces but slightly trickier to examine host interfaces, since you
+must tell the host to do so (typically using <code>host.cmd()</code>.)</p>
+<p><a name="user-content-cli"></a></p>
+<h3>
+<a id="user-content-cli" class="anchor" href="#cli" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CLI</h3>
+<p>Mininet includes a command-line interface (CLI) which may be invoked on
+a network, and provides a variety of useful commands, as well as the
+ability to display xterm windows and to run commands on individual nodes
+in your network. You can invoke the CLI on a network by passing the
+network object into the <code>CLI()</code> constructor:</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> mininet.topo <span class="pl-k">import</span> SingleSwitchTopo
+<span class="pl-k">from</span> mininet.net <span class="pl-k">import</span> Mininet
+<span class="pl-k">from</span> mininet.cli <span class="pl-k">import</span> <span class="pl-c1">CLI</span>
+
+net <span class="pl-k">=</span> Mininet(SingleSwitchTopo(<span class="pl-c1">2</span>))
+net.start()
+CLI(net)
+net.stop()</pre></div>
+<p>Starting up the CLI can be useful for debugging your network, as it
+allows you to view the network topology (with the <code>net</code> command), test
+connectivity (with the <code>pingall</code> command), and send commands to individual
+hosts.</p>
+<pre><code>*** Starting CLI:
+mininet&gt; net
+c0
+s1 lo:  s1-eth1:h1-eth0 s1-eth2:h2-eth0
+h1 h1-eth0:s1-eth1
+h2 h2-eth0:s1-eth2
+mininet&gt; pingall
+*** Ping: testing ping reachability
+h1 -&gt; h2
+h2 -&gt; h1
+*** Results: 0% dropped (0/2 lost)
+mininet&gt; h1 ip link show
+746: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue state UNKNOWN
+	link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+749: h1-eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+	link/ether d6:13:2d:6f:98:95 brd ff:ff:ff:ff:ff:ff
+</code></pre>
+<p><a name="user-content-custom"></a></p>
+<h3>
+<a id="user-content-customizing-mn-using---custom-files" class="anchor" href="#customizing-mn-using---custom-files" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Customizing <code>mn</code> using <code>--custom</code> files</h3>
+<p>In addition to writing complete Mininet scripts in Python, you can also extend the <code>mn</code> command line tool using the <code>--custom</code> option. This allows you to use <code>mn</code> to invoke your own custom topology, switch, host, controller, or link classes.  You can also define and invoke your own system tests, and add new Mininet CLI commands.</p>
+<p>To add new features which can be invoked using the <code>mn</code> command, you need to define a dict in your <code>--custom</code> file based on the option type. The dict's keys are short names passed to the appropriate option, and the values are the corresponding subclasses, constructors, or functions:</p>
+<table>
+<tr>
+<th>option</th>
+<th>dict name</th>
+<th>key: value</th>
+</tr>
+<tr>
+<td><tt>--topo</tt></td>
+<td><tt>topos</tt></td>
+<td>'short name': <tt>Topo</tt> constructor</td>
+</tr>
+<tr>
+<td><tt>--switch</tt></td>
+<td><tt>switches</tt></td>
+<td>'short name': <tt>Switch</tt> constructor</td>
+</tr>
+<tr>
+<td><tt>--host</tt></td>
+<td><tt>hosts</tt></td>
+<td>'short name': <tt>Host</tt> constructor</td>
+</tr>
+<tr>
+<td><tt>--controller</tt></td>
+<td><tt>controllers</tt></td>
+<td>'short name': <tt>Controller</tt> constructor</td>
+</tr>
+<tr>
+<td><tt>--link</tt></td>
+<td><tt>links</tt></td>
+<td>'short name': <tt>Link</tt> constructor</td>
+</tr>
+<tr>
+<td><tt>--test</tt></td>
+<td><tt>test</tt></td>
+<td>'short name': test function to call with Mininet object</td>
+</tr>
+</table>
+<p>For example:</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">class</span> <span class="pl-en">MyTopo</span>( <span class="pl-e">Topo</span> ):
+   <span class="pl-k">def</span> <span class="pl-en">build</span>( <span class="pl-smi"><span class="pl-smi">self</span></span>, ...):
+<span class="pl-k">def</span> <span class="pl-en">myTest</span>( <span class="pl-smi">net</span> ):
+<span class="pl-c1">...</span>
+topos <span class="pl-k">=</span> { <span class="pl-s"><span class="pl-pds">'</span>mytopo<span class="pl-pds">'</span></span>: MyTopo }
+tests <span class="pl-k">=</span> { <span class="pl-s"><span class="pl-pds">'</span>mytest<span class="pl-pds">'</span></span>: myTest }</pre></div>
+<p>This adds the MyTopo class (or constructor) to the topos dictionary, allowing it to be used with the <code>--topo</code> option, as well as a new test, <code>mytest</code>. Note that the test function is called with the top-level <code>Mininet</code> object, and you can pass string or numeric parameters to <code>MyTopo</code>:</p>
+<pre><code>sudo mn --custom mytopo.py --topo mytopo,3
+</code></pre>
+<p>You can also specify multiple custom files:</p>
+<pre><code>sudo mn --custom mytopo.py,mytest.py --topo mytopo,3 --test mytest
+</code></pre>
+<p>This will use <code>mytopo</code> as the default topology and invoke the <code>mytest</code> test.</p>
+<p>This can be a very convenient one-line command to start up Mininet, run an end-to-end system test (or multiple tests), and shut down Mininet. If an exception occurs, the standard Mininet cleanup code will be invoked as <code>mn</code> usually does in that case.</p>
+<h4>
+<a id="user-content-adding-new-cli-commands-in-a---custom-file" class="anchor" href="#adding-new-cli-commands-in-a---custom-file" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding new CLI commands in a <code>--custom</code> file</h4>
+<p>It's easy to add new CLI commands in a <code>--custom</code> file:</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">def</span> <span class="pl-en">mycmd</span>( <span class="pl-smi"><span class="pl-smi">self</span></span>, <span class="pl-smi">line</span> ):
+    <span class="pl-s"><span class="pl-pds">"</span>mycmd is an example command to extend the Mininet CLI<span class="pl-pds">"</span></span>
+    net <span class="pl-k">=</span> <span class="pl-c1">self</span>.mn
+    output( <span class="pl-s"><span class="pl-pds">'</span>mycmd invoked for<span class="pl-pds">'</span></span>, net, <span class="pl-s"><span class="pl-pds">'</span>with line<span class="pl-pds">'</span></span>, line, <span class="pl-s"><span class="pl-pds">'</span><span class="pl-cce">\n</span><span class="pl-pds">'</span></span>  )
+<span class="pl-c1">CLI</span>.do_mycmd <span class="pl-k">=</span> mycmd</pre></div>
+<p>This adds a <code>mycmd</code> command to the Mininet CLI:</p>
+<pre><code>sudo mn --custom mycmd.py -v output
+mininet&gt; help mycmd
+mycmd is an example command to extend the Mininet CLI
+mininet&gt; mycmd foo
+mycmd invoked for &lt;mininet.net.Mininet object at 0x7fd7235fb9d0&gt; with line foo
+</code></pre>
+<p>Note that the command function name that you add to CLI should have the <code>do_</code> prefix.</p>
+<p><a name="user-content-examples"></a></p>
+<h3>
+<a id="user-content-additional-examples" class="anchor" href="#additional-examples" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Additional Examples</h3>
+<p>Additional examples of Mininet scripts may be found in <a href="https://github.com/mininet/mininet/tree/master/examples"><code>mininet/examples</code></a>.</p>
+<p>The examples are intended to be educational as they demonstrate different ways
+that the Mininet API may be used. We encourage you to try both <em>reading</em> the
+Python code and <em>running</em> the examples themselves. If they don't work for some
+reason, see if you can figure out why!</p>
+<p>You may find some of them (e.g. <a href="https://github.com/mininet/mininet/tree/master/examples/consoles.py"><code>consoles.py</code></a>)
+to be interesting demonstrations that you can build upon.</p>
+<p>In particular, you may find
+(<a href="https://github.com/mininet/mininet/tree/master/examples/miniedit.py"><code>miniedit.py</code></a>)
+to be a particularly useful GUI for simple experiments with Mininet.</p>
+<p>Note: The examples are intended as instructional material to be read and understood, not as complete, out-of-the-box solutions to whatever problem you may have. You may be able to use some of the code with modification, but it's important to be able to examine and understand the code.</p>
+<p><a name="user-content-apilevels"></a></p>
+<h3>
+<a id="user-content-understanding-the-mininet-api" class="anchor" href="#understanding-the-mininet-api" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Understanding the Mininet API</h3>
+<p>Over the course of this introduction, you have been exposed to a number of Python classes which comprise Mininet's API, including classes such as <code>Topo</code>, <code>Mininet</code>, <code>Host</code>, <code>Switch</code>, <code>Link</code> and their subclasses. It is convenient to divide these classes into levels (or layers), since in general the high-level APIs are built using the lower-level APIs.</p>
+<p>Mininet's API is built at three primary levels:</p>
+<ul>
+<li>
+<p>Low-level API: The low-level API consists of the base node and link classes (such as <code>Host</code>, <code>Switch</code>, and <code>Link</code> and their subclasses) which can actually be instantiated individually and used to create a network, but it is a bit unwieldy.</p>
+</li>
+<li>
+<p>Mid-level API: The mid-level API adds the <code>Mininet</code> object which serves as a container for nodes and links. It provides a number of methods (such as <code>addHost()</code>, <code>addSwitch()</code>, and <code>addLink()</code>) for adding nodes and links to a network, as well as network configuration, startup and shutdown (notably <code>start()</code> and <code>stop()</code>.)</p>
+</li>
+<li>
+<p>High-level API: The high-level API adds a topology template abstraction, the <code>Topo</code> class, which provides the ability to create reusable, parametrized topology templates. These templates can be passed to the <code>mn</code> command (via the <code>--custom</code> option) and used from the command line.</p>
+</li>
+</ul>
+<p>It is valuable to understand each of the API levels. In general when you want to control nodes and switches directly, you use the low-level API. When you want to start or stop a network, you usually use the mid-level API (notably the <code>Mininet</code> class.)</p>
+<p>Things become interesting when you start thinking about creating full networks. Full networks can be created using any of the API levels (as seen in the examples), but usually you will want to pick either the mid-level API (e.g. <code>Mininet.add*()</code>) or the high-level API (<code>Topo.add*()</code>) to create your networks.</p>
+<p>Here are examples of creating networks using each API level:</p>
+<h4>
+<a id="user-content-low-level-api-nodes-and-links" class="anchor" href="#low-level-api-nodes-and-links" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Low-level API: nodes and links</h4>
+<div class="highlight highlight-source-python"><pre>h1 <span class="pl-k">=</span> Host( <span class="pl-s"><span class="pl-pds">'</span>h1<span class="pl-pds">'</span></span> )                                                                                                     
+h2 <span class="pl-k">=</span> Host( <span class="pl-s"><span class="pl-pds">'</span>h2<span class="pl-pds">'</span></span> )                                                                                                     
+s1 <span class="pl-k">=</span> OVSSwitch( <span class="pl-s"><span class="pl-pds">'</span>s1<span class="pl-pds">'</span></span>, <span class="pl-v">inNamespace</span><span class="pl-k">=</span><span class="pl-c1">False</span> )                                                                             
+c0 <span class="pl-k">=</span> Controller( <span class="pl-s"><span class="pl-pds">'</span>c0<span class="pl-pds">'</span></span>, <span class="pl-v">inNamespace</span><span class="pl-k">=</span><span class="pl-c1">False</span> )                                                                            
+Link( h1, s1 )                                                                                                        
+Link( h2, s1 )                                                                                                        
+h1.setIP( <span class="pl-s"><span class="pl-pds">'</span>10.1/8<span class="pl-pds">'</span></span> )                                                                                                  
+h2.setIP( <span class="pl-s"><span class="pl-pds">'</span>10.2/8<span class="pl-pds">'</span></span> )                                                                                                  
+c0.start()                                                                                                            
+s1.start( [ c0 ] )                                                                                                    
+<span class="pl-c1">print</span> h1.cmd( <span class="pl-s"><span class="pl-pds">'</span>ping -c1<span class="pl-pds">'</span></span>, h2.IP() )                                                                                   
+s1.stop()                                                                                                             
+c0.stop() </pre></div>
+<h4>
+<a id="user-content-mid-level-api-network-object" class="anchor" href="#mid-level-api-network-object" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mid-level API: Network object</h4>
+<div class="highlight highlight-source-python"><pre>net <span class="pl-k">=</span> Mininet()                                                                                                       
+h1 <span class="pl-k">=</span> net.addHost( <span class="pl-s"><span class="pl-pds">'</span>h1<span class="pl-pds">'</span></span> )                                                                                              
+h2 <span class="pl-k">=</span> net.addHost( <span class="pl-s"><span class="pl-pds">'</span>h2<span class="pl-pds">'</span></span> )                                                                                              
+s1 <span class="pl-k">=</span> net.addSwitch( <span class="pl-s"><span class="pl-pds">'</span>s1<span class="pl-pds">'</span></span> )
+c0 <span class="pl-k">=</span> net.addController( <span class="pl-s"><span class="pl-pds">'</span>c0<span class="pl-pds">'</span></span> )                                                                                          
+net.addLink( h1, s1 )                                                                                                 
+net.addLink( h2, s1 )                                                                                                 
+net.start()
+<span class="pl-c1">print</span> h1.cmd( <span class="pl-s"><span class="pl-pds">'</span>ping -c1<span class="pl-pds">'</span></span>, h2.IP() )                                                                                   
+CLI( net )                                                                                                            
+net.stop()  </pre></div>
+<h4>
+<a id="user-content-high-level-api-topology-templates" class="anchor" href="#high-level-api-topology-templates" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>High-level API: Topology templates</h4>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">class</span> <span class="pl-en">SingleSwitchTopo</span>( <span class="pl-e">Topo</span> ):                                                                                               
+    <span class="pl-s"><span class="pl-pds">"</span>Single Switch Topology<span class="pl-pds">"</span></span>                                                                                                  
+    <span class="pl-k">def</span> <span class="pl-en">build</span>( <span class="pl-smi"><span class="pl-smi">self</span></span>, <span class="pl-smi">count</span><span class="pl-k">=</span><span class="pl-c1">1</span> ):                                                                                      
+        hosts <span class="pl-k">=</span> [ <span class="pl-c1">self</span>.addHost( <span class="pl-s"><span class="pl-pds">'</span>h<span class="pl-c1">%d</span><span class="pl-pds">'</span></span> <span class="pl-k">%</span> i )                                                                                   
+                  <span class="pl-k">for</span> i <span class="pl-k">in</span> <span class="pl-c1">range</span>( <span class="pl-c1">1</span>, count <span class="pl-k">+</span> <span class="pl-c1">1</span> ) ]                                                                                
+        s1 <span class="pl-k">=</span> <span class="pl-c1">self</span>.addSwitch( <span class="pl-s"><span class="pl-pds">'</span>s1<span class="pl-pds">'</span></span> )                                                                                           
+        <span class="pl-k">for</span> h <span class="pl-k">in</span> hosts:                                                                                                       
+            <span class="pl-c1">self</span>.addLink( h, s1 )                                                                                             
+
+net <span class="pl-k">=</span> Mininet( <span class="pl-v">topo</span><span class="pl-k">=</span>SingleSwitchTopo( <span class="pl-c1">3</span> ) )                                                                               
+net.start()                                                                                                               
+CLI( net )                                                                                                                
+net.stop()   </pre></div>
+<p>As you can see, the mid-level API is actually the simplest and most concise for this example, because it doesn't require creation of a topology class. The low-level and mid-level APIs are flexible and powerful, but may be less convenient to reuse compared to the high-level <code>Topo</code> API and its topology templates.</p>
+<p>Note also that in Mininet versions before 2.2.0 the high-level <code>Topo</code> doesn't support multiple links between nodes, but the lower level APIs do. Currently <code>Topo</code> also doesn't concern itself with which switches are controlled by which controllers (you can use a custom <code>Switch</code> subclass to do this, as described above.) With the mid-level and low-level APIs, you can manually start the switches if desired, passing the appropriate list of controllers to each switch.</p>
+<p><a name="user-content-api"></a></p>
+<h3>
+<a id="user-content-mininet-api-documentation" class="anchor" href="#mininet-api-documentation" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mininet API Documentation</h3>
+<p>Mininet includes Python documentation strings for each module and API
+call. These may be accessed from Python's regular <code>help()</code> mechanism. For
+example,</p>
+<div class="highlight highlight-source-python"><pre>	python
+	<span class="pl-k">&gt;&gt;</span><span class="pl-k">&gt;</span> <span class="pl-k">from</span> mininet.node <span class="pl-k">import</span> Host
+	<span class="pl-k">&gt;&gt;</span><span class="pl-k">&gt;</span> <span class="pl-c1">help</span>(Host.<span class="pl-c1">IP</span>)
+	Help on method <span class="pl-c1">IP</span> <span class="pl-k">in</span> module mininet.node:
+	
+	IP(<span class="pl-c1">self</span>, <span class="pl-v">intf</span><span class="pl-k">=</span><span class="pl-c1">None</span>) unbound mininet.node.Host method
+		Return <span class="pl-c1">IP</span> address of a node <span class="pl-k">or</span> specific interface.</pre></div>
+<p>This same documentation is also available on the Mininet web site at
+<a href="http://api.mininet.org">http://api.mininet.org</a>.</p>
+<p>You may wish to generate the HTML (and PDF) documentation yourself using <code>doxypy</code>:</p>
+<pre><code>sudo apt-get install doxypy
+cd ~/mininet
+make doc
+cd doc
+python -m SimpleHTTPServer
+</code></pre>
+<p>At this point, you can point a web browser to port 8000 of the host that
+Mininet is running on and browse the documentation for each of Mininet's
+classes.</p>
+<p><a name="user-content-measuring"></a></p>
+<h3>
+<a id="user-content-measuring-performance" class="anchor" href="#measuring-performance" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Measuring Performance</h3>
+<p>These are recommended, though you’re free to use any tool you’re
+familiar with.</p>
+<ol>
+<li>Bandwidth (<code>bwm-ng</code>, <code>ethstats</code>)</li>
+<li>Latency (use <code>ping</code>)</li>
+<li>Queues (use <code>tc</code> included in <code>monitor.py</code>)</li>
+<li>TCP <code>CWND</code> statistics (<code>tcp_probe</code>, maybe we should add
+it to <code>monitor.py</code>)</li>
+<li>CPU usage (global: <code>top</code>, or per-container <code>cpuacct</code>)</li>
+</ol>
+<p><a name="user-content-openflow"></a></p>
+<h3>
+<a id="user-content-openflow-and-custom-routing" class="anchor" href="#openflow-and-custom-routing" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OpenFlow and Custom Routing</h3>
+<p>One of Mininet's most powerful and useful features is that it uses
+<strong>Software Defined Networking</strong>. Using the <a href="https://www.opennetworking.org/sdn-resources/openflow">OpenFlow</a> protocol and related tools, you can
+program switches to do almost anything you want with the packets that
+enter them. OpenFlow makes emulators like Mininet much more useful, since
+network system designs, including custom packet forwarding with OpenFlow,
+can easily be transferred to hardware OpenFlow switches for line-rate operation.
+A tutorial for creating a simple learning switch using Mininet and OpenFlow may be
+found at:</p>
+<p><a href="https://github.com/mininet/openflow-tutorial/wiki">https://github.com/mininet/openflow-tutorial/wiki</a></p>
+<p><a name="user-content-controllers"></a></p>
+<h4>
+<a id="user-content-openflow-controllers" class="anchor" href="#openflow-controllers" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OpenFlow Controllers</h4>
+<p>If you run the <code>mn</code> command without specifying a controller,
+it will pick a default controller such as <code>Controller</code> or <code>OVSController</code>, depending on what is available.</p>
+<p>This is equivalent to:</p>
+<pre><code>$ sudo mn --controller default
+</code></pre>
+<p>This controller implements a simple Ethernet learning switch,
+and supports up to 16 individual switches.</p>
+<p>If you invoke the <code>Mininet()</code> constructor in your script
+without specifying a controller class, by default it will use the
+<code>Controller()</code> class to create an instance of the Stanford/OpenFlow reference
+controller, <code>controller</code>. Like <code>ovs-controller</code>, it turns your switches into
+simple learning switches, but if you have installed <code>controller</code> using Mininet's
+<code>install.sh -f</code> script, the patched version of <code>controller</code> should support a
+large number of switches (up to 4096 in theory, but you'll probably max out
+your computing resources much earlier.) You can also select the
+reference controller for <code>mn</code> by specifying <code>--controller ref</code>.</p>
+<p>If you want to use your own controller, you can easily create a custom
+subclass of <code>Controller()</code> and pass it into Mininet. An example can be seen
+in <code>mininet.controller.NOX()</code>, which invokes NOX classic with a
+set of modules passed in as options.</p>
+<p>Here's a simple example of creating and using a custom POX <code>Controller</code> subclass:</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-c"><span class="pl-c">#</span>!/usr/bin/python                                                                                      </span>
+                                                                                                       
+<span class="pl-k">from</span> mininet.net <span class="pl-k">import</span> Mininet                                                                        
+<span class="pl-k">from</span> mininet.node <span class="pl-k">import</span> Controller                                                                    
+<span class="pl-k">from</span> mininet.topo <span class="pl-k">import</span> SingleSwitchTopo                                                              
+<span class="pl-k">from</span> mininet.log <span class="pl-k">import</span> setLogLevel                                                                    
+                                                                                                       
+<span class="pl-k">import</span> os                                                                                              
+                                                                                                       
+<span class="pl-k">class</span> <span class="pl-en">POXBridge</span>( <span class="pl-e">Controller</span> ):                                                                         
+    <span class="pl-s"><span class="pl-pds">"</span>Custom Controller class to invoke POX forwarding.l2_learning<span class="pl-pds">"</span></span>                                     
+    <span class="pl-k">def</span> <span class="pl-en">start</span>( <span class="pl-smi"><span class="pl-smi">self</span></span> ):                                                                                 
+        <span class="pl-s"><span class="pl-pds">"</span>Start POX learning switch<span class="pl-pds">"</span></span>                                                                    
+        <span class="pl-c1">self</span>.pox <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-c1">%s</span>/pox/pox.py<span class="pl-pds">'</span></span> <span class="pl-k">%</span> os.environ[ <span class="pl-s"><span class="pl-pds">'</span>HOME<span class="pl-pds">'</span></span> ]                                              
+        <span class="pl-c1">self</span>.cmd( <span class="pl-c1">self</span>.pox, <span class="pl-s"><span class="pl-pds">'</span>forwarding.l2_learning &amp;<span class="pl-pds">'</span></span> )                                               
+    <span class="pl-k">def</span> <span class="pl-en">stop</span>( <span class="pl-smi"><span class="pl-smi">self</span></span> ):                                                                                  
+        <span class="pl-s"><span class="pl-pds">"</span>Stop POX<span class="pl-pds">"</span></span>                                                                                     
+        <span class="pl-c1">self</span>.cmd( <span class="pl-s"><span class="pl-pds">'</span>kill %<span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-c1">self</span>.pox )                                                                
+                                                                                                       
+controllers <span class="pl-k">=</span> { <span class="pl-s"><span class="pl-pds">'</span>poxbridge<span class="pl-pds">'</span></span>: POXBridge }                                                               
+                                                                                                       
+<span class="pl-k">if</span> <span class="pl-c1">__name__</span> <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>__main__<span class="pl-pds">'</span></span>:                                                                             
+    setLogLevel( <span class="pl-s"><span class="pl-pds">'</span>info<span class="pl-pds">'</span></span> )                                                                              
+    net <span class="pl-k">=</span> Mininet( <span class="pl-v">topo</span><span class="pl-k">=</span>SingleSwitchTopo( <span class="pl-c1">2</span> ), <span class="pl-v">controller</span><span class="pl-k">=</span>POXBridge )                                  
+    net.start()                                                                                        
+    net.pingAll()                                                                                      
+    net.stop()      </pre></div>
+<p>Note that the above script is written so that it also can be used as a custom argument to <code>mn</code> for use with different topologies and tests as well as the Mininet CLI:</p>
+<pre><code>$ sudo mn --custom poxbridge.py --controller poxbridge --topo tree,2,2 --test pingall -v output
+*** Ping: testing ping reachability
+h1 -&gt; h2 h3 h4 
+h2 -&gt; h1 h3 h4 
+h3 -&gt; h1 h2 h4 
+h4 -&gt; h1 h2 h3 
+*** Results: 0% dropped (0/12 lost)
+</code></pre>
+<p>If you look at the implementation of the <code>NOX</code> class in <code>mininet/node.py</code>,
+you will notice that it can actually accept options to allow different modules
+to be started depending on what arguments are
+passed into it, from the constructor or the <code>mn</code> command line.</p>
+<p><a name="user-content-extcontrollers"></a></p>
+<h4>
+<a id="user-content-external-openflow-controllers" class="anchor" href="#external-openflow-controllers" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>External OpenFlow Controllers</h4>
+<p>Custom <code>Controller()</code> subclasses are the most convenient method for automatically starting and shutting down your controller. It's easy to create <code>start()</code> and <code>stop()</code> methods so that Mininet will automatically start and stop your controller as needed.</p>
+<p>(For more information, check out this <a href="http://mininet.org/blog/2013/06/03/automating-controller-startup/">blog post</a>.)</p>
+<p>However, you may find it useful to connect Mininet to an existing controller that is <em>already running</em> somewhere else, for example somewhere on your LAN, in another VM, or on your laptop.</p>
+<p>The <code>RemoteController</code> class acts as a proxy for a controller which may be running anywhere on the control network, but which must be started up and shut down manually or by some other mechanism outside of Mininet's direct control.</p>
+<p>You can use <code>RemoteController</code> from <code>Mininet</code>:</p>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> functools <span class="pl-k">import</span> partial
+net <span class="pl-k">=</span> Mininet( <span class="pl-v">topo</span><span class="pl-k">=</span>topo, <span class="pl-v">controller</span><span class="pl-k">=</span>partial( RemoteController, <span class="pl-v">ip</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>127.0.0.1<span class="pl-pds">'</span></span>, <span class="pl-v">port</span><span class="pl-k">=</span><span class="pl-c1">6633</span> ) )</pre></div>
+<p>or if you prefer:</p>
+<div class="highlight highlight-source-python"><pre>net <span class="pl-k">=</span> Mininet( <span class="pl-v">topo</span><span class="pl-k">=</span>topo, <span class="pl-v">controller</span><span class="pl-k">=</span><span class="pl-k">lambda</span> <span class="pl-smi">name</span>: RemoteController( name, <span class="pl-v">ip</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>127.0.0.1<span class="pl-pds">'</span></span> ) )</pre></div>
+<p>or even</p>
+<div class="highlight highlight-source-python"><pre>net <span class="pl-k">=</span> Mininet( <span class="pl-v">topo</span><span class="pl-k">=</span>topo, <span class="pl-v">controller</span><span class="pl-k">=</span><span class="pl-c1">None</span>)
+net.addController( <span class="pl-s"><span class="pl-pds">'</span>c0<span class="pl-pds">'</span></span>, <span class="pl-v">controller</span><span class="pl-k">=</span>RemoteController, <span class="pl-v">ip</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>127.0.0.1<span class="pl-pds">'</span></span>, <span class="pl-v">port</span><span class="pl-k">=</span><span class="pl-c1">6633</span> )</pre></div>
+<p>Note that <code>controller</code> (like <code>host</code> and <code>switch</code>) in this case is a <em>constructor</em>, not an <em>object</em> (but see below for additional info!) You can create a custom constructor in-line using <code>partial</code> or <code>lambda</code>, or you can pass in your own function (which must take the <code>name</code> parameter and return a controller object) or class (e.g. a subclass of <code>RemoteController</code>.)</p>
+<p>You can also create multiple controllers and create a custom <code>Switch()</code> subclass which
+connects to different controllers as desired:</p>
+<div class="highlight highlight-source-python"><pre>
+c0 <span class="pl-k">=</span> Controller( <span class="pl-s"><span class="pl-pds">'</span>c0<span class="pl-pds">'</span></span> )  <span class="pl-c"><span class="pl-c">#</span> local controller</span>
+c1 <span class="pl-k">=</span> RemoteController( <span class="pl-s"><span class="pl-pds">'</span>c1<span class="pl-pds">'</span></span>, <span class="pl-v">ip</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>127.0.0.2<span class="pl-pds">'</span></span> )  <span class="pl-c"><span class="pl-c">#</span> external controller</span>
+cmap <span class="pl-k">=</span> { <span class="pl-s"><span class="pl-pds">'</span>s1<span class="pl-pds">'</span></span>: c0, <span class="pl-s"><span class="pl-pds">'</span>s2<span class="pl-pds">'</span></span>: c1, <span class="pl-s"><span class="pl-pds">'</span>s3<span class="pl-pds">'</span></span>: c1 }
+
+<span class="pl-k">class</span> <span class="pl-en">MultiSwitch</span>( <span class="pl-e">OVSSwitch</span> ):
+    <span class="pl-s"><span class="pl-pds">"</span>Custom Switch() subclass that connects to different controllers<span class="pl-pds">"</span></span>
+    <span class="pl-k">def</span> <span class="pl-en">start</span>( <span class="pl-smi"><span class="pl-smi">self</span></span>, <span class="pl-smi">controllers</span> ):
+        <span class="pl-k">return</span> OVSSwitch.start( <span class="pl-c1">self</span>, [ cmap[ <span class="pl-c1">self</span>.name ] ] )</pre></div>
+<p>You can also specify an external controller from the <code>mn</code> command line:</p>
+<pre><code>$ sudo mn --controller remote,ip=192.168.51.101
+</code></pre>
+<p><strong>Abusing the API by passing in a controller object</strong></p>
+<p>In Mininet 2.2.0 and above, you may choose to pass in a <code>Controller</code> <em>object</em> instead of a <em>constructor</em> (and indeed even a list of objects.) This was added because people kept doing it in spite of the API clearly specifying that a constructor was needed.</p>
+<p>This allows you to do something like:</p>
+<pre><code>net = Mininet( topo, controller=RemoteController( 'c0', ip='127.0.0.1' ) )
+</code></pre>
+<p>And get the behavior that you intended. Constructors are still permitted as well.</p>
+<p><a name="user-content-multipath"></a></p>
+<h4>
+<a id="user-content-multipath-routing" class="anchor" href="#multipath-routing" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multipath Routing</h4>
+<p>It's important to remember that Ethernet bridges (also known as learning switches)
+will flood packets that miss in their MAC tables. They will also flood broadcasts
+like ARP and DHCP requests. This means that if your network has loops or multiple
+paths in it, it <strong>will not work</strong> with the default <code>ovs-controller</code> and <code>controller</code>
+controllers, nor NOX's <code>pyswitch</code>, nor POX's <code>l2_learning</code>, which all act as
+learning switches/Ethernet bridges.</p>
+<p>In spite of the obviousness of this issue, it has become a
+<a class="internal present" href="/mininet/mininet/wiki/FAQ#wiki-ethernet-loops">Frequently Asked Question</a>.</p>
+<p>More recent (and more complex) OpenFlow controllers do support multipath routing -
+consult your controller's documentation to determine if any special configuration
+is required.</p>
+<p>If you are building a fat-tree like topology, you may wish to take a look at
+<a href="http://github.com/brandonheller/riplpox">RipLPOX</a>, a basic datacenter
+controller implemented using POX. You may be able to use it as a starting point
+for your own custom multipath routing.</p>
+<p>You may also wish to implement a custom <code>Controller()</code> subclass to invoke
+RipLPOX for convenience.</p>
+<p>(Or if you're truly daring/insane, you could even try importing Mininet
+and POX or RipLPOX into a single Python script! But you probably don't want
+to do that.)</p>
+<p><a name="user-content-updating"></a></p>
+<h3>
+<a id="user-content-updating-mininet" class="anchor" href="#updating-mininet" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Updating Mininet</h3>
+<p>If we need to make changes or additions to Mininet to fix bugs or
+other problems, and you have installed Mininet from source,
+you may wish to update your copy of Mininet. This is easily done using one of two methods:</p>
+<p>Update using symbolic links to Mininet source tree (makes it easy to update Mininet's python code):</p>
+<pre><code>cd ~/mininet
+    git checkout master # assuming you want to update to the current master branch
+sudo make develop # this only needs to be done initially and when mnexec.c changes
+git fetch
+git pull --rebase
+</code></pre>
+<p>Update copying Mininet source into /usr/lib/python... (allows you to delete or move Mininet source tree):</p>
+<pre><code>cd ~/mininet
+    git checkout master # assuming you want to update to the current master branch
+git fetch
+git pull --rebase
+    sudo make install
+</code></pre>
+<p><a name="user-content-python"></a></p>
+<h3>
+<a id="user-content-learning-python" class="anchor" href="#learning-python" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Learning Python</h3>
+<p>Mininet is written in Python and allows Python-based user scripts to
+interface with it. Fortunately Python is one of the easiest computer
+languages to understand, learn, and use, due to its (mostly) readable
+syntax, similarity to other object-oriented languages, and many useful
+libraries. Once you reconcile yourself to its quirks (significant
+indentation, mandatory use of <code>self</code>, runtime error checking, etc.) you
+may appreciate it as a very quick (if sometimes dirty) way to crank out
+useful scripts and code.</p>
+<p>There are a vast variety of free Python tutorials available on the internet,
+from books to complete courses. The Python documentation at
+<a href="http://docs.python.org">http://docs.python.org</a> will also quickly become your friend if it isn't already.</p>
+<p>In addition to helping to locate Python tutorials, Google seems to work
+astoundingly well for finding answers to Python questions, many of which
+are answered on <a href="http://stackoverflow.com">http://stackoverflow.com</a>.</p>
+<p>Perhaps even more astoundingly, Microsoft's Bing can actually find and <strong>run Python code</strong> in its search results!
+For example, you could search for <a href="http://bing.com/search?q=python+bubble+sort">python bubble sort</a> and it will actually bring up executable code.</p>
+<p><a name="user-content-background"></a></p>
+<h3>
+<a id="user-content-useful-background-for-using-mininet" class="anchor" href="#useful-background-for-using-mininet" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Useful Background for Using Mininet</h3>
+<p>(Random list, no particular order.)</p>
+<ol>
+<li>
+<p>Object oriented programming (creating classes, objects from classes,
+etc.)</p>
+</li>
+<li>
+<p>Importing Python modules</p>
+<p><a href="http://docs.python.org/tutorial/modules.html">http://docs.python.org/tutorial/modules.html</a></p>
+</li>
+<li>
+<p>Invoking system utilities from Python</p>
+<p><a href="http://docs.python.org/library/subprocess.html">http://docs.python.org/library/subprocess.html</a>
+<a href="http://docs.python.org/library/os.html%5D">http://docs.python.org/library/os.html]</a>
+<a href="https://github.com/amoffat/pbs">https://github.com/amoffat/pbs</a></p>
+</li>
+<li>
+<p>Parsing output files in your own format</p>
+<p><a href="http://docs.python.org/library/re.html">http://docs.python.org/library/re.html</a></p>
+</li>
+<li>
+<p>Passing command line arguments to your script</p>
+<p><a href="http://docs.python.org/dev/library/argparse.html">http://docs.python.org/dev/library/argparse.html</a></p>
+</li>
+<li>
+<p><code>matplotlib</code> for plotting graphs</p>
+<p><a href="http://matplotlib.sourceforge.net">http://matplotlib.sourceforge.net</a></p>
+</li>
+</ol>
+<p><a name="user-content-resources"></a></p>
+<h3>
+<a id="user-content-useful-python-resources" class="anchor" href="#useful-python-resources" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Useful Python Resources</h3>
+<ol>
+<li>
+<p>The Python documentation is a good place to start:</p>
+<p><a href="http://docs.python.org/tutorial/index.html">http://docs.python.org/tutorial/index.html</a></p>
+</li>
+<li>
+<p>Beginner’s guide:</p>
+<p><a href="http://www.python.org/about/gettingstarted">http://www.python.org/about/gettingstarted</a></p>
+</li>
+</ol>
+<p><a name="user-content-how"></a></p>
+<h3>
+<a id="user-content-how-does-it-really-work-optional-for-the-curious" class="anchor" href="#how-does-it-really-work-optional-for-the-curious" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewbox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How Does It Really Work? (optional: for the curious)</h3>
+<p>The magic behind Mininet’s illusion is a set of features built into
+Linux that allow a single system to be split into a bunch of smaller
+“containers”, each with a fixed share of the processing power, combined
+with virtual link code that allows links with accurate delays and
+speeds.</p>
+<p>Internally, Mininet employs lightweight virtualization features in the
+Linux kernel, including process groups, CPU bandwidth isolation, and
+network namespaces, and combines them with link schedulers and virtual
+Ethernet links. These features yield a system that starts faster and
+scales to more hosts than emulators which use full virtual machines.</p>
+<p>A Mininet network consists of the following components:</p>
+<ol>
+<li>
+<p><em>Isolated Hosts</em>. An emulated host in Mininet is a group of user-level
+processes moved into a network namespace - a container for network
+state. Network namespaces provide process groups with exclusive
+ownership of interfaces, ports, and routing tables (such as ARP and
+IP). For example, two web servers in two network namespaces can
+coexist on one system, both listening to private eth0 interfaces on
+port 80. Mininet uses CPU Bandwidth Limiting to limit the fraction
+of a CPU available to each process group.</p>
+</li>
+<li>
+<p><em>Emulated Links</em>. The data rate of each link is enforced by Linux
+Traffic Control (<code>tc</code>), which has a number of packet schedulers to
+shape traffic to a configured rate. Each emulated host has its own
+virtual Ethernet interface(s) (created and installed with ip link
+add/set). A virtual Ethernet (or <code>veth</code>) pair, acts like a wire
+connecting two virtual interfaces, or virtual switch ports; packets
+sent through one interface are delivered to the other, and each
+interface appears as a fully functional Ethernet port to all system
+and application software.</p>
+</li>
+<li>
+<p><em>Emulated Switches</em>. Mininet typically uses the default Linux bridge
+or Open vSwitch running in kernel mode to switch packets across
+interfaces. Switches and routers can run in the kernel (for speed)
+or in user space (so we can modify them easily).</p>
+</li>
+</ol>
+<p>For more details, see the
+<a href="http://mininet.org">Mininet website</a> and our Mininet <a href="publications">Publications</a>.</p>
+
+      </div>
+
+      <div id="wiki-footer" class="wiki-footer gollum-markdown-content boxed-group">
+        <div class="boxed-group-inner wiki-auxiliary-content  markdown-body">
+          <p><a href="http://mininet.org">Mininet Project</a></p>
+
+        </div>
+      </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+    </div>
+  </div>
+
+  </div>
+
+      <div class="container site-footer-container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links float-right">
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact GitHub</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage" class="site-footer-mark" title="GitHub">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+    <ul class="site-footer-links">
+      <li>&copy; 2017 <span title="0.15022s from github-fe-9d6fe79.cp1-iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+  
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+    You can't perform that action at this time.
+  </div>
+
+
+    
+    <script crossorigin="anonymous" integrity="sha256-bRCeda2EcbpBUIJybADDX7kpzquXUIJJKDXxHsqMB9k=" src="https://assets-cdn.github.com/assets/frameworks-6d109e75ad8471ba415082726c00c35fb929ceab975082492835f11eca8c07d9.js"></script>
+    <script async="async" crossorigin="anonymous" integrity="sha256-RAFX/5i7gNAXqQs1LcHsYObx5uaIb70PtjxrZa7rchg=" src="https://assets-cdn.github.com/assets/github-440157ff98bb80d017a90b352dc1ec60e6f1e6e6886fbd0fb63c6b65aeeb7218.js"></script>
+    
+    
+      <script crossorigin="anonymous" integrity="sha256-GIz1Zvg1zNrG/p8ohJGJbMwbmpmAhg8DlvXIAOBPSmM=" src="https://assets-cdn.github.com/assets/wiki-188cf566f835ccdac6fe9f288491896ccc1b9a9980860f0396f5c800e04f4a63.js"></script>
+
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+  </div>
+</div>
+
+
+  </body>
+</html>
+
