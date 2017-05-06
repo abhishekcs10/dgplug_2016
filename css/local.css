@@ -13,25 +13,37 @@ body {
 }
 
 .col{
-	margin: 15px;
+	margin: 10px;
 	background-color: #111111;
 	border-radius: 5em;
 	align-self: center;
-	padding: 10 50 10 50;
+	padding: 10;
+	text-align:center;
 
 }
 
+.col2{
+
+	background-color: #111111;
+	border-radius: 5em;
+	align-self: center;
+	text-align: center;
+	margin: 0 150 0 150;
+	padding: 10 0 0 0;
+
+}
 .centralize{
 //background-color: #00f0df;
 display: flex;
+align-self: center;
 flex-direction: column;
 justify-content: center;
-width: 80%;
+width: 95%;
 
 }
 
 #text-glow{
-  font-size:5em;
+  font-size:3em;
   text-align: center;
   color:rgb(255,255,255);
   -webkit-transition: all 0.7s ease;
