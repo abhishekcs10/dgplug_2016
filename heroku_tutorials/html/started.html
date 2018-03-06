@@ -1,0 +1,145 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Heroku &#8212; heroku 1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to heroku’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="heroku">
+<h1>Heroku<a class="headerlink" href="#heroku" title="Permalink to this headline">¶</a></h1>
+<p>App deployment platform so you can focus on building webapp.</p>
+<div class="section" id="git-support">
+<h2>Git support<a class="headerlink" href="#git-support" title="Permalink to this headline">¶</a></h2>
+<p>Heroku can deploy app using git.</p>
+<p>git push heroku master</p>
+</div>
+<div class="section" id="contiuous-deployment">
+<h2>Contiuous Deployment<a class="headerlink" href="#contiuous-deployment" title="Permalink to this headline">¶</a></h2>
+<p>Develop locally-&gt;deploy on heroku-&gt; get feedback</p>
+</div>
+<div class="section" id="what-happens">
+<h2>What happens<a class="headerlink" href="#what-happens" title="Permalink to this headline">¶</a></h2>
+<p>when you push your code it goes through</p>
+<ul class="simple">
+<li>heroku manager</li>
+<li>there it setups a language environment for compilation and execution</li>
+<li>then after compilation we get <strong>slug</strong> (compiled version of app)</li>
+<li>then other services are configured like database that our app needs</li>
+<li>finally the app is released</li>
+</ul>
+<div class="section" id="heroku-deployment-process">
+<h3>heroku deployment process<a class="headerlink" href="#heroku-deployment-process" title="Permalink to this headline">¶</a></h3>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="_images/heroku1.png"><img alt="Deployment" src="_images/heroku1.png" style="width: 400px; height: 400px;" /></a>
+<p class="caption"><span class="caption-text">Deployment</span></p>
+</div>
+</div>
+<div class="section" id="heroku-developer-workflow">
+<h3>Heroku developer workflow<a class="headerlink" href="#heroku-developer-workflow" title="Permalink to this headline">¶</a></h3>
+<div class="align-center figure" id="id2">
+<a class="reference internal image-reference" href="_images/heroku2.png"><img alt="Developer workflow" src="_images/heroku2.png" style="width: 400px; height: 400px;" /></a>
+<p class="caption"><span class="caption-text">Developer workflow</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="demo-example-of-code-deployment">
+<h2>Demo Example of code deployment<a class="headerlink" href="#demo-example-of-code-deployment" title="Permalink to this headline">¶</a></h2>
+<p>Steps-&gt;</p>
+<p>1- Write an app
+2- Run locally
+3- version in git
+4- create an application
+5- deploy!
+6- Logging
+7- Add-ons
+8- Configuration variables
+9- Release
+10- Scale</p>
+<p>1- Code your app //requires some important things
+2- See if it runs successfully
+3- Setup version control in your project folder. git init, git add ., git commit -m “initial commit”
+4- create application on heroku-&gt; heroku create app_name
+5- upload code to the application-&gt; git push heroku master
+6- When you change your code , apply git add and commit and git push heroku master</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to heroku’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, abhishekcs10.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/started.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

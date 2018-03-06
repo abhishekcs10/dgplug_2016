@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Submitting patches by Email &mdash; github 1.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="github 1.0.1 documentation" href="index.html"/>
+        <link rel="prev" title="Understanding GITHUB" href="some_useful_info.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> github
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="includeme.html">Basics of GITHUB to get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branching.html">The workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branching.html#branching">Branching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github_pages.html">Github Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="some_useful_info.html">Understanding GITHUB</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Submitting patches by Email</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generating-patches">Generating patches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sending-patch">Sending Patch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-use-send-email">How to use <em>send-email</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-send-email">Installing send-email</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-your-name-and-email-address">Configuring Your Name and Email Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-mail-sending-options">Configuring the Mail Sending Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-the-default-destination-address">Configuring the Default Destination Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-send-email-command">Using the send-email Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sending-a-single-patch">Sending a Single Patch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apply-patches">Apply Patches</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">github</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Submitting patches by Email</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/patches.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="submitting-patches-by-email">
+<h1>Submitting patches by Email<a class="headerlink" href="#submitting-patches-by-email" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="generating-patches">
+<h2>Generating patches<a class="headerlink" href="#generating-patches" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>git format-patch</strong> will generate a patch-file-per-commit in the range required, formatted ready to go as mail messages in mbox format. The –to can be specified for which mail address the patches should be sent to – but the sending is done separately.</p>
+<p>From the branch having changes, run following</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="nb">format</span><span class="o">-</span><span class="n">patch</span> <span class="p">[</span><span class="n">BASE_BRANCH_NAME</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Another version is</p>
+<p>To generate patches from the topmost commits from a specific sha1 hash:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="nb">format</span><span class="o">-</span><span class="n">patch</span> <span class="o">-&lt;</span><span class="n">n</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">SHA1</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>To specify sender to which you want to send the patch, use <em>–to</em> option</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="nb">format</span><span class="o">-</span><span class="n">patch</span> <span class="o">--</span><span class="n">to</span> <span class="n">erabhishektiwarics</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span><span class="n">SHA1</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="sending-patch">
+<h3>Sending Patch<a class="headerlink" href="#sending-patch" title="Permalink to this headline">¶</a></h3>
+<p>These patch files can then be transmitted via mail using the <em>git send-email</em> command. This connects to the given SMTP server (either the one from your global ~/.gitconfig or the project’s .gitconfig, or the one specified on the command line) and then sends each patch file as a separate e-mail:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">send</span><span class="o">-</span><span class="n">email</span> <span class="o">--</span><span class="n">smtp</span><span class="o">-</span><span class="n">server</span><span class="o">=</span><span class="n">smtp</span><span class="o">.</span><span class="n">gmail</span><span class="o">.</span><span class="n">com</span> <span class="o">*.</span><span class="n">patch</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-use-send-email">
+<h2>How to use <em>send-email</em><a class="headerlink" href="#how-to-use-send-email" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="installing-send-email">
+<h2>Installing send-email<a class="headerlink" href="#installing-send-email" title="Permalink to this headline">¶</a></h2>
+<p>You probably already have git already installed, but that’s not necessarily enough to have also the send-email command available. You can check if send-email is available by running “git send-email –help”. If it shows the man page for send-email, then send-email is available. Otherwise, you need to install the send-email command. Your distribution probably has a package for it; on Debian the package name is “git-email”.</p>
+</div>
+<div class="section" id="configuring-your-name-and-email-address">
+<h2>Configuring Your Name and Email Address<a class="headerlink" href="#configuring-your-name-and-email-address" title="Permalink to this headline">¶</a></h2>
+<p>You should tell git your name and email address. You have probably done this already, but if not, run these commands:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;My Name&quot;</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;myemail@example.com&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuring-the-mail-sending-options">
+<h2>Configuring the Mail Sending Options<a class="headerlink" href="#configuring-the-mail-sending-options" title="Permalink to this headline">¶</a></h2>
+<p>git send-email sends the emails through your SMTP server, so you need to configure the server parameters. Refer to your email provider documentation to find the right parameters. This is how I would configure my mail settings:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">sendemail</span><span class="o">.</span><span class="n">smtpencryption</span> <span class="n">tls</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">sendemail</span><span class="o">.</span><span class="n">smtpserver</span> <span class="n">mail</span><span class="o">.</span><span class="n">messagingengine</span><span class="o">.</span><span class="n">com</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">sendemail</span><span class="o">.</span><span class="n">smtpuser</span> <span class="n">tanuk</span><span class="nd">@fastmail</span><span class="o">.</span><span class="n">fm</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">sendemail</span><span class="o">.</span><span class="n">smtpserverport</span> <span class="mi">587</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">sendemail</span><span class="o">.</span><span class="n">smtppass</span> <span class="n">hackme</span>
+</pre></div>
+</div>
+<p>Storing the password in the git configuration file is obviously a security risk. It’s not mandatory to configure the password. If it’s not configured, git send-email will ask it every time the command is used.</p>
+</div>
+<div class="section" id="configuring-the-default-destination-address">
+<h2>Configuring the Default Destination Address<a class="headerlink" href="#configuring-the-default-destination-address" title="Permalink to this headline">¶</a></h2>
+<p>For PulseAudio, the patches should be sent to our mailing list. In order to avoid having to remember it and retyping it all the time, you can configure the address to be used by default by git send-email. As you may contribute to many projects using git, it does not make sense to set this option globally so instead we’ll only set it in our clone of the PulseAudio code.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="n">sendemail</span><span class="o">.</span><span class="n">to</span> <span class="n">pulseaudio</span><span class="o">-</span><span class="n">discuss</span><span class="nd">@lists</span><span class="o">.</span><span class="n">freedesktop</span><span class="o">.</span><span class="n">org</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-send-email-command">
+<h2>Using the send-email Command<a class="headerlink" href="#using-the-send-email-command" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="sending-a-single-patch">
+<h2>Sending a Single Patch<a class="headerlink" href="#sending-a-single-patch" title="Permalink to this headline">¶</a></h2>
+<p>Sending the last commit in the current branch:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">send</span><span class="o">-</span><span class="n">email</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Sending some other commit:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">send</span><span class="o">-</span><span class="n">email</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span><span class="n">SHA1</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Adding Patch Version Information</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">send</span><span class="o">-</span><span class="n">email</span> <span class="o">-</span><span class="n">v2</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<div class="section" id="apply-patches">
+<h3>Apply Patches<a class="headerlink" href="#apply-patches" title="Permalink to this headline">¶</a></h3>
+<p>Once the patches have been created, how do you apply them into a local clone? If you have a patch file, you can apply it with <em>git apply</em>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">apply</span> <span class="o">*.</span><span class="n">patch</span>
+</pre></div>
+</div>
+<p>Note, however, that this approach does not recreate the state of the world as it was on the sender’s repository. Instead, the patch is applied but it only makes local changes to the repository’s content instead; it does not recreate the commit (and more specifically, the hash of that commit). You can specify <em>git apply –index</em> and <em>git apply –cached</em> to get the changes put into the staging area, but this does not recreate the same commit as before.</p>
+<p>To recreate the commit as it was exactly requires the use of <em>git am</em>, which stands for apply mailbox. This runs through a mailbox (which may have one or more patches in it) and recreates a commit for each one of those patches.</p>
+<blockquote>
+<div>Fortunately, the output generated by git patch is already in mbox format; it’s the purpose of the otherwise dummy From 9c9c692df50e5a9eb91b41cc86f57212afd78ef9 Mon Sep 17 00:00:00 2001 line at the top of the patch file. As a result, the patches can be treated as one message per mbox, and then applied in batch to the changes which get sent.</div></blockquote>
+<p>In fact, since mbox elements can be concatenated together, this permits patch files to be concatenated together to form a larger patch file, which can be sent as a single unit via another transfer mechanism and then applied on the remote side.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="some_useful_info.html" class="btn btn-neutral" title="Understanding GITHUB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, abhishekcs10.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

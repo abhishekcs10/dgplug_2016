@@ -1,0 +1,76 @@
+==========
+Heroku
+==========
+
+App deployment platform so you can focus on building webapp.
+
+Git support
+==============
+
+Heroku can deploy app using git.
+
+git push heroku master
+
+Contiuous Deployment
+======================
+
+Develop locally->deploy on heroku-> get feedback
+
+What happens
+============
+
+when you push your code it goes through 
+
+- heroku manager
+- there it setups a language environment for compilation and execution
+- then after compilation we get **slug** (compiled version of app) 
+- then other services are configured like database that our app needs
+- finally the app is released
+
+heroku deployment process
+---------------------------
+
+.. figure:: heroku1.png
+	:width: 400px
+	:align: center
+	:height: 400px
+	:alt: Deployment
+	:figclass: align-center
+
+	Deployment
+
+Heroku developer workflow
+---------------------------
+
+.. figure:: heroku2.png
+	:width: 400px
+	:align: center
+	:height: 400px
+	:alt: Developer workflow
+	:figclass: align-center
+
+	Developer workflow
+
+Demo Example of code deployment 
+===================================
+
+Steps->
+
+1- Write an app
+2- Run locally
+3- version in git
+4- create an application
+5- deploy!
+6- Logging
+7- Add-ons
+8- Configuration variables
+9- Release
+10- Scale
+
+1- Code your app //requires some important things
+2- See if it runs successfully
+3- Setup version control in your project folder. git init, git add ., git commit -m "initial commit"
+4- create application on heroku-> heroku create app_name
+5- upload code to the application-> git push heroku master
+6- When you change your code , apply git add and commit and git push heroku master
+ 

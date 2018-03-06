@@ -1,0 +1,10 @@
+==================
+Setting a network
+==================
+
+What is filterload ?
+=======================
+
+The filterload (control message) message tells the receiving peer to filter all relayed transaction and requested merkle block through the provided filter.This allows clients to receive transactions relevant to their wallet plus a configurable rate of false positive transactions which can provide plausible-deniability privacy.
+
+

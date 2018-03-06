@@ -1,0 +1,32 @@
+==================================
+Frequently used Vim commands
+==================================
+
+ZZ							save and exit
+Ctrl+v						select column wise
+V							select entire line
+P							paste on current line
+p							paste on next line
+w							traverse to next word
+b							traverse to previous word
+Ctrl+p 						auto-complete based on previously typed text		works in insert mode
+split or Ctrl-w s 			will split the Vim view into two viewports, horizontally.
+vsplit or Ctrl-w v 			will split the Vim view into two viewports, vertically.
+split filename 				will split the Vim view into two viewports, horizontally, and open filename in the new viewport.
+vsplit filename 			will split the Vim view into two viewports, vertically, and open filename in the new viewport.
+Ctrl-w r 					moves viewports clockwise.
+Ctrl-w R					moves viewports counter-clockwise.
+vim -p filename1 filename2 	to open multiple files in tabs from the command line.
+:tabnew 					to open a new tab.
+gt 							to switch to the next tab.
+gT 							to switch to the previous tab.
+:tabc 						to close a tab.
+zfnj 						creates a fold from the cursor down n lines.
+zo 							opens a fold on the cursor.
+zj 							moves the cursor to the next fold.
+zk 							moves the cursor to the previous fold.
+zd 							deletes the fold at the cursor.
+zE							deletes all folds in the document.
+zM 							closes all open folds.
+zR 							opens all folds.
+

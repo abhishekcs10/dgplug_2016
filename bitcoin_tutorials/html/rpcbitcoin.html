@@ -1,0 +1,105 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>RPC in bitcoin &#8212; Bitcoin_tutorial 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3rd part" href="api_cmd.html" />
+    <link rel="prev" title="Working with regtest mode bitcoin" href="regtest.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="rpc-in-bitcoin">
+<h1>RPC in bitcoin<a class="headerlink" href="#rpc-in-bitcoin" title="Permalink to this headline">¶</a></h1>
+<p>Reference <a href="#id1"><span class="problematic" id="id2">`BITCOIN RPC&lt;https://bitcoin.org/en/developer-reference#remote-procedure-calls-rpcs&gt;`_</span></a></p>
+<p>Bitcoin Core provides a remote procedure call (RPC) interface for various administrative tasks, wallet operations, and queries about network and block chain data.</p>
+<p>If you start Bitcoin Core using bitcoin-qt, the RPC interface is disabled by default. To enable it, set server=1 in bitcoin.conf or supply the -server argument when invoking the program. If you start Bitcoin Core using bitcoind, the RPC interface is enabled by default.</p>
+<p>The interface requires the user to provide a password for authenticating RPC requests. This password can be set either using the rpcpassword property in bitcoin.conf or by supplying the -rpcpassword program argument. Optionally a username can be set using the rpcuser configuration value. See the Examples Page for more information about setting Bitcoin Core configuration values.</p>
+<p>Open-source client libraries for the RPC interface are readily available in most modern programming languages, so you probably don’t need to write your own from scratch. Bitcoin Core also ships with its own compiled C++ RPC client, bitcoin-cli, located in the bin directory alongside bitcoind and bitcoin-qt. The bitcoin-cli program can be used as a command-line interface (CLI) to Bitcoin Core or for making RPC calls from applications written in languages lacking a suitable native client. The remainder of this section describes the Bitcoin Core RPC protocol in detail.</p>
+<p>The Bitcoin Core RPC service listens for HTTP POST requests on port 8332 in mainnet mode or 18332 in testnet or regtest mode. The port number can be changed by setting rpcport in bitcoin.conf. By default the RPC service binds to your server’s localhost loopback network interface so it’s not accessible from other servers. Authentication is implemented using HTTP basic authentication. RPC HTTP requests must include a Content-Type header set to text/plain and a Content-Length header set to the size of the request body.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="regtest.html" title="previous chapter">Working with regtest mode bitcoin</a></li>
+      <li>Next: <a href="api_cmd.html" title="next chapter">3rd part</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/rpcbitcoin.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, abhishekcs10.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/rpcbitcoin.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,56 @@
+==================
+About .git folder
+==================
+
+
+::
+
+	|-- COMMIT_EDITMSG
+	|-- FETCH_HEAD
+	|-- HEAD
+	|-- ORIG_HEAD
+	|-- branches
+	|-- config
+	|-- description
+	|-- hooks
+	|   |-- applypatch-msg
+	|   |-- commit-msg
+	|   |-- post-commit
+	|   |-- post-receive
+	|   |-- post-update
+	|   |-- pre-applypatch
+	|   |-- pre-commit
+	|   |-- pre-rebase
+	|   |-- prepare-commit-msg
+	|   `-- update
+	|-- index
+	|-- info
+	|   `-- exclude
+	|-- logs
+	|   |-- HEAD
+	|   `-- refs
+	|-- objects
+	`-- refs
+		|-- heads
+		|-- remotes
+		|-- stash
+		`-- tags
+
+Let’s go over some of the normal files that you may see living in the base directory:
+
+COMMIT_EDITMSG:
+---------------
+
+This is the last commit’s message. It’s not actually used by Git at all, but it’s there mostly for your reference after you made a commit.
+
+config: 
+---------
+
+Contains settings for this repository. Specific configuration variables can be dumped in here (and even aliases!) What this file is most used for is defining where remotes live and some core settings, such as if your repository is bare or not.
+
+description: 
+-------------
+
+If you’re using gitweb or firing up git instaweb, this will show up when you view your repository or the list of all versioned repositories.
+
+

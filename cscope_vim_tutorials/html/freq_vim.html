@@ -1,0 +1,117 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Frequently used Vim commands &#8212; cscope_vim 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Cscope for a small project" href="intro.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="frequently-used-vim-commands">
+<h1>Frequently used Vim commands<a class="headerlink" href="#frequently-used-vim-commands" title="Permalink to this headline">¶</a></h1>
+<p>ZZ                                                      save and exit
+Ctrl+v                                          select column wise
+V                                                       select entire line
+P                                                       paste on current line
+p                                                       paste on next line
+w                                                       traverse to next word
+b                                                       traverse to previous word
+Ctrl+p                                          auto-complete based on previously typed text            works in insert mode
+split or Ctrl-w s                       will split the Vim view into two viewports, horizontally.
+vsplit or Ctrl-w v                      will split the Vim view into two viewports, vertically.
+split filename                          will split the Vim view into two viewports, horizontally, and open filename in the new viewport.
+vsplit filename                         will split the Vim view into two viewports, vertically, and open filename in the new viewport.
+Ctrl-w r                                        moves viewports clockwise.
+Ctrl-w R                                        moves viewports counter-clockwise.
+vim -p filename1 filename2      to open multiple files in tabs from the command line.
+:tabnew                                         to open a new tab.
+gt                                                      to switch to the next tab.
+gT                                                      to switch to the previous tab.
+:tabc                                           to close a tab.
+zfnj                                            creates a fold from the cursor down n lines.
+zo                                                      opens a fold on the cursor.
+zj                                                      moves the cursor to the next fold.
+zk                                                      moves the cursor to the previous fold.
+zd                                                      deletes the fold at the cursor.
+zE                                                      deletes all folds in the document.
+zM                                                      closes all open folds.
+zR                                                      opens all folds.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="intro.html" title="previous chapter">Cscope for a small project</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, abhishekcs10.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/freq_vim.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,27 @@
+.. Bitcoin_tutorial documentation master file, created by
+   sphinx-quickstart on Wed Feb  8 17:34:47 2017.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Bitcoin_tutorial's documentation!
+============================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   get_started
+   regtest
+   rpcbitcoin
+   api_cmd
+   p2pnetwork
+   2.3add_node
+   transaction
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

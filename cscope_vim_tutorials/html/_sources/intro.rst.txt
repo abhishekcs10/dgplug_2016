@@ -1,0 +1,355 @@
+Cscope for a small project
+=============================
+
+There are a few easy steps required to start using Cscope. First, you need to tell it where all of your source code files are. Second, you need to generate the Cscope database. Finally, you can launch the Cscope browser to search for functions and symbols in your source code. Here are commands to perform these steps for a small C project, assumed to be in the directory ~/small-project/.
+
+    First, a small bit of setup: you should set the editor that Cscope will open your search results in. The default editor is vi; if you want to change it to something else, set the CSCOPE_EDITOR environment variable, e.g.:
+
+    export CSCOPE_EDITOR=`which emacs`
+
+    Note that those are backticks, not single-quotes, in that command. Put this command in your .bashrc file if you'd like.
+
+    cd to the top-level of your project directory and then use a find command to gather up all of the source code files in your project. The following command will recursively find all of the .c, .cpp, .h, and .hpp files in your current directory and any subdirectories, and store the list of these filenames in cscope.files:
+
+    cd ~/small-project/
+    find . -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" > cscope.files
+
+    Depending on your project, you can use additional file extensions in this command, such as .java, .py, .s, etc.
+
+    Now, pass the list of source files to Cscope, which will build a reference database:
+
+    cscope -q -R -b -i cscope.files
+
+    The -q flag is used to build a faster (but larger) database. -R tells Cscope to search for symbols recursively. -b builds the database only, but does not start the Cscope browser. -i cscope.files specifies the list of source files. The output of this command will be a set of files in your current directory: cscope.in.out, cscope.out, and cscope.po.out.
+
+    Finally, start the Cscope browser:
+
+    cscope -d
+
+    The -d flag tells Cscope not to regenerate the database (which you already did in the previous step). Within the Cscope browser, type ? to see the help page, and type Ctrl-d to exit. The browser will show you a list of the searches you can perform in your code:
+
+    Find this C symbol:
+    Find this global definition:
+    Find functions called by this function:
+    Find functions calling this function:
+    Find this text string:
+    Change this text string:
+    Find this egrep pattern:
+    Find this file:
+    Find files #including this file:
+
+    Most of these should be self-explanatory. C symbols include pretty much anything that you can think of in a C file: function names, variable names, things that are #define'd, etc. You can search for all instances of a symbol, or find its original definition. Cscope can find all of the functions that call a particular function, which can be extremely useful; this is a feature of Cscope that other tools like Ctags do not have. If you find that the C symbol and function searches do not find what you are looking for, you can fall back to the text search options at the bottom of the list.
+
+    Select the type of search that you'd like to perform, type in your search term and hit Enter. At the top of the screen Cscope will display a list of results with the file, function, and line where the search term was found. If you select one of these results and hit Enter, Cscope will open up the editor to the matching line in the file. You can manipulate the file as you please, and when you close it the browser will appear again. When you're finished, press Ctrl-d to exit.
+
+
+
+Caution!
+
+When using Cscope on forkbomb, I've noticed some weirdness with searches being executed as case-sensitive when they shouldn't be, or vice-versa. If Cscope is returning no results from your search when you expect that there should be some, try toggling case-sensitive mode by pressing Ctrl-c inside of the Cscope browser (you'll see a toggle message at the top of the window).
+
+
+
+Note
+
+After making modifications to your source code, the cscope database will become out of sync, so you can periodically regenerate the database by running the find and cscope commands again.
+
+
+
+Tip
+
+When searching for "global definitions," sometimes Cscope will return multiple definitions, which is annoying. It appears that many forward declarations (i.e. function prototypes or declarations of structures that declare it but don't define it), and not just definitions, appear in Cscope's results. We haven't figured out a workaround for this issue, but usually you can find the function or structure definition that you're looking for by scanning through the results for a line with an open curly brace ({) or a line that doesn't end in a semicolon.
+
+
+
+Tip
+
+See the Cscope man page and help page (press ?) for some other useful arguments and commands for Cscope. For example:
+
+    -C disables case-sensitive search (this can also be toggled from within Cscope with Ctrl-c).
+    -p4 causes Cscope to prepend the directories (up to 4) leading to a source file in your tree when displaying its results.
+    Pressing Ctrl-b allows you to search for previous search terms again.
+
+For more information on executing Cscope commands from directly within your editor (especially vi), see the list of resource links at the top of this tutorial.
+
+
+
+Word Completion
+===============
+
+If learning Vim seems like hard work at first, rest assured that in the long run it will save you work. One of the ways that Vim saves you work is with word completion. Obviously, this is very useful for developers and system administrators when editing code or configuration files.
+
+As you're typing a longer word, hit Ctrl-p or Ctrl-n. Let's say you're typing the word searching, which you've already used once in a document. Type "sea" and then hit Ctrl-p, and Vim will either autocomplete the word if "sea" is a unique string, or show a list of words that begin with "sea".
+
+When you hit Ctrl-p, you can keep typing to narrow the selection, or use the arrow keys to choose the right word, and then hit tab.
+
+What Vim is doing when you use this command is to search through the document and find similar strings, and then displays the options.If the word/string hasn't appeared in the document before, you'll get an error that says "pattern not found."
+
+What's the difference between Ctrl-p and Ctrl-n? The Ctrl-p command searches for "previously" used terms and displays them in that order, and Ctrl-n searches for the "next" terms, and displays in that order. For most uses, they're pretty equivalent.
+
+
+Abbreviations
+===============
+
+As you're probably noticing, Vim is a great editor for people who like to conserve keystrokes. Another extremely handy feature of Vim is abbreviations. These can be set on the fly. Let me show you what I'm talking about.
+
+Let's say that you're editing a document and have to use a particularly long word repeatedly, or a company or person's name. If you don't want to type out ReallyLongWord over and over again, you can do this instead:
+
+:ab rlw ReallyLongWord
+
+So the first argument is the abbreviation, the second argument to the :ab command is the expansion. Now, when you type the characters rlw you'll get ReallyLongWord. Simple, no? What happens if you want to unset an abbreviation? You could exit Vim, and the abbreviation will go away when the session ends, but that's a hassle.
+
+To get rid of an abbreviation, use :una rlw and it will clear it. Just that easy!
+
+This is a feature that I used extensively when writing full-time. It came in especially handy with longer names and projects. It also ensured I only needed to spell someone's name correctly once, which is handy.
+
+Mappings
+===========
+
+Being able to quickly enter arbitrary strings with abbreviations is useful, but what if you'd like to run a sequence of commands with a keystroke or two? You can do that with a mapping.
+
+Let me give a quick example. Vim offers the ability to highlight search terms. This should be off by default. If you run ?searchterm or /searchterm you'll be moved to the first instance of those terms, but won't see the rest of the instances in the buffer. If you want to see all instances, though, you need to have search highlighting on. I find it distracting most of the time, but sometimes it's useful. So I have this mapping set in my Vim configuration file:
+
+nmap <silent> <C-n> <Esc>:call ToggleHLSearch()<CR>
+
+Mastering the Vim Interface
+============================
+
+It's not obvious at first, but you can actually edit two, three, even dozens of files at a time in a single Vim session simultaneously. You can do this by making use of multiple "viewports" and by using a relatively new feature introduced in Vim 7, tabs.
+
+Let's start with the viewports first. When you fire up Vim with a file, you'll see a single viewport with the file. Let's say you're editing a really long file and want to be able to make edits in two sections of the file at the same time. Run :split (remember, you need to hit Escape first) and then you'll see two views of the same file.
+
+That's useful, but how do we get to the old viewport? Simple, enter command mode (hit Escape) and use Ctrl-w and then either the arrow keys or movement keys to move. The Ctrl-w command tells Vim you want to do a window/viewport operation, and then the movement keys that you already are familiar with (h,k,j,l) will move you around. For instance, if you have a Vim session running split horizontally with two viewports, you can run Ctrl-w k to move to the upper viewport, and Ctrl-w j to move down. Or using Ctrl-w Ctrl-w will cycle you through the windows.
+
+If, instead of moving between viewports, you want to move the viewports, you can use Ctrl-w r and Ctrl-w R to rotate windows clockwise and counter-clockwise, respectively.
+
+Seeing multiple views of the same file is moderately useful. But what I find particularly useful is having two (or more) viewports open with different files in each. Let's say you want to open a new viewport with your httpd.conf in it. Just run :split httpd.conf and then you're in business.
+
+What if you want to return to a single view? You can close the view by quitting the file normally (:q) or by running Ctrl-w c in the viewport you want to close. Note that Vim is looking out for you, and won't quit an unsaved file when using Ctrl-w c. You'll be prompted to save the file first. Isn't Vim a sweetheart?
+
+Here's a look at all the major commands you'll want to know. Note that there are several valid combinations that do the same thing. In the interest of brevity, I'm not going to cover very conceivable key combination that works to do the same things.
+
+    :split or Ctrl-w s will split the Vim view into two viewports, horizontally.
+    :vsplit or Ctrl-w v will split the Vim view into two viewports, vertically.
+    :split filename will split the Vim view into two viewports, horizontally, and open filename in the new viewport.
+    :vsplit filename will split the Vim view into two viewports, vertically, and open filename in the new viewport.
+    Ctrl-w r moves viewports clockwise.
+    Ctrl-w R moves viewports counter-clockwise.
+
+Why do you want to do this all in a single session? A couple of reasons. First, if you're SSH'ed into a remote machine, it can be a hassle to open two, three, or more sessions. Better to have a single session open. Also, you might want to do things like copy and paste between files -- which you can do easily by opening multiple files in viewports.
+
+
+Vim and Tabs
+==============
+
+The tab interface has made Web browsing so much more user-friendly, why not bring 'em to Vim too? If you tend to work on several projects at once, having tabs set up can be a good way to multi-task without having to see all of your files at once.
+
+If you want to start Vim with more than one file, run vim -p filename1 filename2. This will open each file in its own tab.
+
+Already in a Vim session? You can open a new tab with :tabnew filename to open (or create) a file.
+
+Moving between tabs is dead easy. To switch to the next tab (next being the one to the right, or wrapping back to the first tab) use gt in command mode. To switch to the previous tab, use gT.
+
+To close a tab you can do a few things. One is to simply use Vim's usual commands to quit a session. If you're editing one file in a tab and use :wq or similar, it will also close the tab. Or you can use :tabc to close the tab. Again, Vim is watching out for you, and won't quit that session without saving the file.
+
+    vim -p filename1 filename2 to open multiple files in tabs from the command line.
+    :tabnew to open a new tab.
+    gt to switch to the next tab.
+    gT to switch to the previous tab.
+    :tabc to close a tab.
+
+You can also combine tabs and viewports -- so you can have a session with multiple viewports in each tab, if you like. Mix and match, Vim is very flexible and if you can think of something that Vim would logically need to do, odds are that it does.
+
+Folding in Vim
+===============
+In the last installment, we covered using viewports and tabs to make it easier to navigate long documents and multiple documents. There's one more feature that we should look at for working with really long documents, and that's folding.
+
+Let's say you have a document that's 1,000 lines long. You want to be able to view the first and last 20 lines at the same time. You could do it with viewports, but there's a quick way to do it using folding.
+
+Folding commands are prefaced with z. Let's say you want to "fold" 70 lines. You'd run zf70j, which would "fold" all of those lines into a single line that effectively hides those lines until you "open" the fold. To do that, move the cursor onto the fold and run zo. To break down the command: zf tells Vim you're about to do a fold. 70 tells Vim how many lines to perform the action on, and j is the direction command that tells Vim to fold downward. You could also use k to fold "upward" instead.
+
+You might notice some odd characters inserted in the file. These are markers that tell Vim where the folds end and begin. The folds will continue to exist until they're deleted. To do that, run zd on the line where the fold is, or zE to delete all folds in a file.
+
+Yes, you can have multiple folds in a document, and even nested folds -- that is, folds within another fold. I recommend you take a longish text file and play around with the fold commands to see what you can do. It can come in amazingly handy when working with long files.
+
+    zfnj creates a fold from the cursor down n lines.
+    zo opens a fold on the cursor.
+    zj moves the cursor to the next fold.
+    zk moves the cursor to the previous fold.
+    zd deletes the fold at the cursor.
+    zE deletes all folds in the document.
+    zM closes all open folds.
+    zR opens all folds.
+
+Setting Up Your Vim Config
+===========================
+
+Once you start using Vim regularly, you'll want to edit your Vim configuration file, the .vimrc under your home directory, to keep your favorite settings across sessions and to set up your favorite mappings, abbreviations, etc. Note that most Linux distros ship with a default vimrc located at /etc/vimrc. This is the system-wide configuration, but it can be overridden by your personal .vimrc.
+
+Let's look at a very simple Vim configuration file:
+
+" .vimrc - startup file for Vim
+
+::
+
+	 syntax on
+	 set viminfo='1000,f1,\"500,:100,/100
+	 set mouse=a
+	 autocmd FileType html,xml,xsl source ~/.vim/scripts/closetag.vim 
+
+The Vim configuration file is basically a collection of Vim commands that are read on startup. The first line of the sample vimrc is a comment. Comments are preceded by quotes (").
+
+The syntax on command tells Vim to enable syntax highlighting. Vim can perform syntax highlighting for any type of file that has a syntax definition. Syntax files are usually shipped as part of the Vim or Vim enhanced packages and can be found under the /usr/share/vim directory. For instance, on openSUSE 11.2 they're under /usr/share/vim/vim72/syntax -- this will probably vary depending on your distro's packaging guidelines.
+
+The next command tells Vim how much history and so forth to store in the viminfo file. This makes session info persistent between sessions. So if you exit Vim you'll still have some history from the previous session. See :help viminfo for more about this.
+
+The set mouse=a command tells Vim to enable the mouse everywhere, even when running in an Xterm. This means that you can, among other things, use the mouse to position the cursor or drag viewports to resize them. I rarely use this myself, but it may prove handy for folks who don't want to have to remember that Ctrl-w 10< is the way to make the existing vertical viewport 10 columns smaller.
+
+The final command tells Vim to execute a command when it opens any source file that's XML, XSL, or HTML. In this case, it calls the closetag.vim script, which makes it easy to "close" XML/HTML tags so you don't have to type closing tags. We'll get into scripts in the next tutorial.
+
+To edit your .vimrc, just open the file in Vim and make the appropriate edits. You can either restart Vim to see the changes, or use the :source command to re-read the config file like so:
+
+:source ~/.vimrc
+
+Vim has far, far too many options to try to cover all or even most of them in one tutorial. The main thing to understand here is that Vim is almost infinitely customizable, and that if you can think of something that Vim should do (relative to editing text, at least) it's probably possible. 
+
+
+In and Out of Vim
+===================
+
+No man is an island, and no text editor is an operating system, even though Emacs does try pretty hard. Sometimes you need to work on text using external commands or get to a shell without exiting the Vim session.
+
+If you need to get to a shell from inside Vim, without quitting your session, hit Ctrl-z. This is standard shell behavior on Linux systems, assuming you're using Bash, which is to say it works with other commands running under Bash as well. To return to your session, hit fg at the shell prompt.
+
+Another way to get to the shell is to just enter command mode and use :sh -- which will drop you to a new shell and allow you to run your jobs and then return to Vim by using exit.
+
+You can also filter text in Vim through a command, and then bring it back into Vim, without needing to leave Vim at all. A simple example: Let's say you have a list of names in the buffer that you would like to sort in alphabetical order like this:
+
+Jules
+ Vincent
+ Butch
+ Mia
+ Marsellus 
+
+Use Vim's selection feature (Ctrl-v) to highlight the list, and then enter this command:
+
+:! sort
+
+That will sort the names in alphabetical order.
+
+You can use this with all kinds of command line utilities. You could call fmt from within Vim to set the width of a file, or call tidy from within Vim to clean up crufty HTML.
+
+Note that you don't need to use the selection command if you know the range of lines you want to operate on or if you want to operate on the entire file. To filter specific lines, specify the range and then the command:
+
+:x,y ! command
+
+In this case, x would be the starting line, y would be the last line to check, and of course you'd replace command with the command you'd like to use. So, to filter lines 34 through 38 using sort, you'd run:
+
+:34,38 ! sort
+
+To do this globally (the entire buffer), use %, which tells Vim to do the entire buffer:
+
+:% ! sort
+
+The spaces aren't actually necessary. You can bunch everything up as well, but it's more readable the other way.
+
+The Dot and Other Useful Tips
+================================
+
+
+This may not be "advanced," per se but I hadn't mentioned it prior to now, and thought that it was worth calling out. Want a quick and easy way to redo your last operation? Hit the period (.) in command mode. For instance, enter edit mode and write a few lines of text, then hit Escape. Now hit . and Vim will re-insert the same text. Delete five words using 5dw in command mode. Then hit . and it will do the same thing again. This can be very useful when working with structured text and making repetitive edits.
+
+Need to know how many words are in your document, or a document selection? No sweat. To get the word count for the entire document, use the command g-Ctrl-g (that's g and then Ctrl-g) to get a report for the number of words in the document, as well as the number of lines and bytes, and position of the cursor. You'll see a report like this in the status bar at the bottom of Vim:
+
+Col 8 of 8; Line 38 of 38; Word 577 of 577; Byte 3226 of 3227
+
+To get a report on a selection of text, use the commands from the Vim 101 guide to select the portion of text, and then use g-Ctrl-g to sum up the selection.
+
+As an example, to figure out how many words are in a line when the cursor is at the end of the line, you'd use the commands v 0 g-Ctrl-g. The v puts you into select mode. The 0 moves the selection to the beginning of the line and highlights the entire line. And then g-Ctrl-g tells Vim to report the stats for the selected text.
+
+Scripts and Plugins
+====================
+
+Vim isn't limited to what you get "out of the box." It's possible to extend Vim pretty heavily, and many people have added features to Vim far and above plain old text editing.
+
+You already know you can edit the .vimrc to customize Vim's behavior. By adding scripts and plugins, you can not only customize existing features, you can add features or modify Vim in ways that you can't do through the .vimrc.
+
+Let's start with installing scripts. In your home directory, you should have a .vim directory. Under that directory, you should have a scripts and plugin directory. If not, go ahead and create them.
+
+What's the difference between a script and a plugin? Basically this: A plugin is loaded automatically when Vim starts. Scripts have to be explicitly called--which can be done through the .vimrc like this:
+
+autocmd FileType html,xml,xsl source ~/.vim/scripts/closetag.vim 
+
+Or you might want to use mapping to set up a shortcut to call a script from time to time.
+
+To install a script or plugin, just put them in the appropriate directory. Writing scripts is a bit beyond this article, but you can find a ton of pre-written scripts on Vim.org. If there's something you can think of that you want to do with Vim, odds are someone has already written a script to do it.
+
+Let's look at a quick example of installing a plugin. One plugin I really like is Bash Support, which turns Vim into a "Bash IDE" for writing Bash scripts.
+
+To install it, grab the file bash-support.vim and put it in your .vim/plugin directory. Some plugins require some additional configuration to be added to your .vimrc. In the case of bash-support.vim, you need to define your name, email, and company variable:
+
+::
+
+	let g:BASH_AuthorName   = 'First Last'
+	let g:BASH_Email        = 'This e-mail address is being protected from spambots. You need JavaScript enabled to view it'
+	let g:BASH_Company      = 'Acme Corp'     
+
+Vim won't automatically load it, but when you restart Vim it will load it and magic will start to happen. When you open a new file ending in .sh, Vim will automatically create a header for your script that includes the date, the information here, and so on.
+
+There are literally thousands of Vim scripts floating around. From useful tools like the Bash Support plugin, to TwitVim--a script to use Vim to post to Twitter.
+
+One important note--some scripts you find online may be in a DOS file format instead of UNIX. If this is the case, Vim on Linux will throw some errors at you when starting Vim because it tries to interpret the line endings as commands. To fix this, use the dos2unix command to convert the file, which should be installed by default on most distros or available from the repos.
+
+Bookmarking in Vim
+===================
+
+When working on a really long document or when programming, you might have sections you revisit frequently. One way to move back and forth is to search for specific terms that might be in the section you want to revisit. Another, easier, way is to use Vim's marks to set bookmarks.
+
+This is really easy to do. When you're in a section where you'd like to set a bookmark, just type m in command mode, followed by a letter to use as the bookmark. So, you might type ma to set the first, mb to set the second, etc. But whatever is easiest to remember--Vim doesn't require that the bookmarks be set in sequential or any order.
+
+After you've set the bookmark, type the backtick character and then the letter for the bookmark, 'n where n is the letter you've set for the bookmark. So to go to mark "a" type 'a and so on.
+
+Note that marks are buffer-specific. So if you have multiple tabs open, or if you're editing two documents in split viewports, you can have two a marks, and so on--setting a mark in one buffer won't carry over to another.
+
+You can set global bookmarks with upper-case letters, but the behavior is a bit unexpected. If you have two (or more) buffers open and run mA on one, you'll set a mark named A. Going into another buffer, you can return to the previous mark with A but Vim will want to close the open buffer first. So it's possible to set global marks, but the default behavior is a bit odd.
+
+After hours of frenzied editing, it's possible you might forget where some of the marks are. No problem, just run :marks in command mode. You'll see something like this:
+
+mark line  col file/text
+  '    127    4 if &filetype == "html" || exists("b:closetag_html_style")
+  a    127    4 if &filetype == "html" || exists("b:closetag_html_style")
+  b    310    0 function! s:Pop(sname)
+  z    321    0 call s:RestoreKeywords()
+  0    352   30 /usr/share/vim/vim72/doc/starting.txt
+  1      1    0 ~/.vimrc
+  2      5  533 ~/Desktop/OStatic/christmas_alek.html
+  "      1    0 " File: closetag.vim
+  [      1    0 " File: closetag.vim
+  ]    327    0 endfunction 
+
+That shows manually set marks as well as some automatic marks (files edited previously).
+
+GUI Vim
+==========
+
+Yes, Virginia, Vim does have a GUI. On most Linux distros, this isn't installed by default. To get Vim's GUI (we'll just say GVim from here out) search your package repositories for gvim.
+
+For instance, if you want to get GVim on openSUSE, you can grab it by searching for gvim in the Software Manager, or just run:
+
+sudo zypper in gvim
+
+To run GVim, you can either find it in your desktop's application menu or run gvim at the terminal or using your desktop's "Run Application" dialog. (Usually brought up with Alt+F2, depending on the desktop you're using.)
+
+Since GVim uses the same commands as Vim, what you already know about Vim applies immediately to GVim. One thing that's useful for learning Vim is that most of the menus expose the Vim commands needed to perform operations. So, for instance, if you click on the File menu, it will show you the commands for most of the operations available under that menu. This might make it easier to pick up commands by discovery.
+
+Why did I put this in the "advanced" piece instead of one of the other tutorials? A couple of reasons. I think it's important to know the basics before using a "crutch," as it were. You can use GVim to hide some of the complexity of Vim which is great for casual use, but it's not terribly effective for a learning situation. Plus, you can make use of Vim in almost any situation--whereas GVim requires a desktop session. Not very handy if you need to SSH into a remote system and do some troubleshooting or system configuration.
+
+Many scripts extend the GUI to add menus to make editing specific types of files easier, and so on. One that you might find useful if you spend time working with HTML is the HTML menu for GVim. While it may not be an inventive name, it is descriptive! Just copy the file to your .vim/plugin directory and then add the following to your .vimrc:
+
+source ~.vim/plugin/vim_menu_HTMLpol
+
+I tend to prefer the standard version of Vim, but take GVim for a spin and see if it suits your working style.
+
+Finally, a word about Vim's charity. Vim is actually "charityware"--its license is considered GPL-compatible, but it includes an added request of users to consider making a donation to help needy children in Uganda. Actually, you don't need to be a Vim user to do this, but if you are finding Vim to be helpful, you might consider chipping in.
+
+

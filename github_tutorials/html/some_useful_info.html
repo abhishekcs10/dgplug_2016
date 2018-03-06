@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -34,6 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="github 1.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Submitting patches by Email" href="patches.html"/>
         <link rel="prev" title="Github Pages" href="github_pages.html"/> 
 
   
@@ -43,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -83,7 +87,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="includeme.html">Basics of GITHUB to get started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="branching.html">The workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="branching.html#branching">Branching</a></li>
@@ -103,6 +110,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="patches.html">Submitting patches by Email</a></li>
 </ul>
 
             
@@ -115,8 +123,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">github</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">github</a>
+        
       </nav>
 
 
@@ -125,23 +135,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Understanding GITHUB</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Understanding GITHUB</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="_sources/some_useful_info.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -186,15 +213,15 @@ Lets take following example</p>
 <a class="reference internal image-reference" href="_images/rebase.jpg"><img alt="Before-rebase" src="_images/rebase.jpg" style="width: 200px; height: 200px;" /></a>
 <p class="caption"><span class="caption-text">Before rebase</span></p>
 </div>
-<p>it has four commits on the master branch, and each commit has an ID (in this case, a, b, c, and d). You&#8217;ll notice that d is currently the latest commit (or HEAD) of the master branch.
-Here, we have two branches: master and my-branch. You can see that master and my-branch both contain commits a and b, but then they start to diverge: master contains c and d, while my-branch contains e and f. b is said to be the &#8220;merge base&#8221; of my-branch in comparison to master &#8211; or more commonly, just the &#8220;base&#8221;. It makes sense: you can see that my-branch was based on a previous version of master.</p>
-<p>So let&#8217;s say that my-branch has gone stale, and you want to bring it up to date with the latest version of master. To put it another way, my-branch needs to contain c and d. You could do a merge, but that causes the branch to contain weird merge commits that make reviewing the pull request much more difficult. Instead, you can do a rebase.</p>
+<p>it has four commits on the master branch, and each commit has an ID (in this case, a, b, c, and d). You’ll notice that d is currently the latest commit (or HEAD) of the master branch.
+Here, we have two branches: master and my-branch. You can see that master and my-branch both contain commits a and b, but then they start to diverge: master contains c and d, while my-branch contains e and f. b is said to be the “merge base” of my-branch in comparison to master – or more commonly, just the “base”. It makes sense: you can see that my-branch was based on a previous version of master.</p>
+<p>So let’s say that my-branch has gone stale, and you want to bring it up to date with the latest version of master. To put it another way, my-branch needs to contain c and d. You could do a merge, but that causes the branch to contain weird merge commits that make reviewing the pull request much more difficult. Instead, you can do a rebase.</p>
 <div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="_images/rebase2.jpg"><img alt="After-rebase" src="_images/rebase2.jpg" style="width: 200px; height: 200px;" /></a>
 <p class="caption"><span class="caption-text">After rebase</span></p>
 </div>
-<p>When you rebase, git finds the base of your branch (in this case, b), finds all the commits between that base and HEAD (in this case, e and f), and re-plays those commits on the HEAD of the branch you&#8217;re rebasing onto (in this case, master). Git actually creates new commits that represent what your changes look like on top of master: in the diagram, these commits are called e′ and f′. Git doesn&#8217;t erase your previous commits: e and f are left untouched, and if something goes wrong with the rebase, you can go right back to the way things used to be.</p>
-<p>When many different people are working on a project simulateously, pull requests can go stale quickly. A &#8220;stale&#8221; pull request is one that is no longer up to date with the main line of development, and it needs to be updated before it can be merged into the project. The most common reason why pull requests go stale is due to conflicts: if two pull requests both modify similar lines in the same file, and one pull request gets merged, the unmerged pull request will now have a conflict. Sometimes, a pull request can go stale without conflicts: perhaps changes in a different file in the codebase require corresponding changes in your pull request to conform to the new architecture, or perhaps the branch was created when someone had accidentally merged failing unit tests to the master branch. Regardless of the reason, if your pull request has gone stale, you will need to rebase your branch onto the latest version of the master branch before it can be merged.</p>
+<p>When you rebase, git finds the base of your branch (in this case, b), finds all the commits between that base and HEAD (in this case, e and f), and re-plays those commits on the HEAD of the branch you’re rebasing onto (in this case, master). Git actually creates new commits that represent what your changes look like on top of master: in the diagram, these commits are called e′ and f′. Git doesn’t erase your previous commits: e and f are left untouched, and if something goes wrong with the rebase, you can go right back to the way things used to be.</p>
+<p>When many different people are working on a project simulateously, pull requests can go stale quickly. A “stale” pull request is one that is no longer up to date with the main line of development, and it needs to be updated before it can be merged into the project. The most common reason why pull requests go stale is due to conflicts: if two pull requests both modify similar lines in the same file, and one pull request gets merged, the unmerged pull request will now have a conflict. Sometimes, a pull request can go stale without conflicts: perhaps changes in a different file in the codebase require corresponding changes in your pull request to conform to the new architecture, or perhaps the branch was created when someone had accidentally merged failing unit tests to the master branch. Regardless of the reason, if your pull request has gone stale, you will need to rebase your branch onto the latest version of the master branch before it can be merged.</p>
 </div>
 <div class="section" id="how-to-work-with-repository-of-some-other-organisation">
 <h2>How to work with repository of some other organisation<a class="headerlink" href="#how-to-work-with-repository-of-some-other-organisation" title="Permalink to this headline">¶</a></h2>
@@ -244,7 +271,7 @@ If you want to merge in the target branch to make your Pull Request mergeable, y
 <ol class="last arabic simple" start="4">
 <li>now <cite>git fetch upstream master</cite> will pull changes from the original repo.</li>
 <li><cite>git merge upstream/master</cite> //conflicts may arise resolve them</li>
-<li>Now you need to do <cite>git push origin master</cite> &#8211;&gt; that will push to you repo :)</li>
+<li>Now you need to do <cite>git push origin master</cite> –&gt; that will push to you repo :)</li>
 <li>Next go to your github repo the <cite>foobar-1</cite> one and create pull request</li>
 <li>After review the maintainer of project will merge the changes</li>
 </ol>
@@ -263,9 +290,9 @@ If you want to merge in the target branch to make your Pull Request mergeable, y
 </pre></div>
 </div>
 <ol class="last arabic simple" start="4">
-<li>now <cite>git pull &#8211;rebase upstream master</cite> will pull changes from the original repo.</li>
-<li>now when you try to push using <cite>git push upstream master</cite> this will give you an error as it points to my repo and you don&#8217;t have access</li>
-<li>so you need to do <cite>git push origin master</cite> &#8211;&gt; that will push to you repo :)</li>
+<li>now <cite>git pull –rebase upstream master</cite> will pull changes from the original repo.</li>
+<li>now when you try to push using <cite>git push upstream master</cite> this will give you an error as it points to my repo and you don’t have access</li>
+<li>so you need to do <cite>git push origin master</cite> –&gt; that will push to you repo :)</li>
 <li>Next go to your github repo the <cite>foobar-1</cite> one and create pull request</li>
 <li>After review the maintainer of project will merge the changes</li>
 </ol>
@@ -277,13 +304,18 @@ If you want to merge in the target branch to make your Pull Request mergeable, y
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="patches.html" class="btn btn-neutral float-right" title="Submitting patches by Email" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="github_pages.html" class="btn btn-neutral" title="Github Pages" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="github_pages.html" class="btn btn-neutral" title="Github Pages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -317,7 +349,8 @@ If you want to merge in the target branch to make your Pull Request mergeable, y
             VERSION:'1.0.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

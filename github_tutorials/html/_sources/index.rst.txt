@@ -15,6 +15,9 @@ Contents:
    branching.rst
    github_pages.rst
    some_useful_info
+   git_dir
+   restore
+   patches
 
 Indices and tables
 ==================

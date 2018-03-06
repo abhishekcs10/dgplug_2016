@@ -1,0 +1,9 @@
+==================
+3rd part
+==================
+
+https://bitcoin.org/en/developer-reference#getmininginfo
+
+you will find work to be done on node D
+
+

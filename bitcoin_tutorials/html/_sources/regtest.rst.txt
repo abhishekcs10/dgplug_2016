@@ -1,0 +1,28 @@
+===================================
+Working with regtest mode bitcoin
+===================================
+
+::
+
+	>bitcoind -regrest -daemon
+	Bitcoin server starting
+
+This creates a private blockchain
+
+::
+
+	>bitcoin-cli -regtest generate 101
+
+
+Generate 101 blocks using a special RPC which is only available in regtest mode. This takes about 30 seconds on a generic PC. Because this is a new block chain using Bitcoin’s default rules, the first blocks pay a block reward of 50 bitcoins. Unlike mainnet, in regtest mode only the first 150 blocks pay a reward of 50 bitcoins. However, a block must have 100 confirmations before that reward can be spent, so we generate 101 blocks to get access to the coinbase transaction from block #1
+
+::
+
+	>bitcoin-cli -regtest getbalance
+	50.0000
+
+Verify that we now have 50 bitcoin available
+
+You can now use Bitcoin Core RPCs prefixed with bitcoin-cli -regtest.
+
+

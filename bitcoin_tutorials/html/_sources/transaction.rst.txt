@@ -1,0 +1,60 @@
+=========================
+Bitcoin Transaction
+=========================
+
+Creating transactions is something most Bitcoin applications do. This section describes how to use Bitcoin Core’s RPC interface to create transactions with various attributes.
+
+Your applications may use something besides Bitcoin Core to create transactions, but in any system, you will need to provide the same kinds of data to create transactions with the same attributes as those described below.
+
+In order to use this tutorial, you will need to setup Bitcoin Core and create a regression test mode environment with 50 BTC in your test wallet.
+
+
+Simple Spending
+==================
+
+Bitcoin Core provides several RPCs which handle all the details of spending, including creating change outputs and paying appropriate fees. Even advanced users should use these RPCs whenever possible to decrease the chance that satoshis will be lost by mistake.
+
+::
+
+	> bitcoin-cli -regtest getnewaddress
+	mvbnrCX3bg1cDRUu8pkecrvP6vQkSLDSou
+	
+	> NEW_ADDRESS=mvbnrCX3bg1cDRUu8pkecrvP6vQkSLDSou
+
+Get a new Bitcoin address and save it in the shell variable $NEW_ADDRESS.
+
+Send 10 bitcoins to the address using the sendtoaddress RPC. The returned hex string is the transaction identifier (txid).
+
+The sendtoaddress RPC automatically selects an unspent transaction output (UTXO) from which to spend the satoshis. In this case, it withdrew the satoshis from our only available UTXO, the coinbase transaction for block #1 which matured with the creation of block #101. To spend a specific UTXO, you could use the sendfrom RPC instead.
+
+::
+
+	> bitcoin-cli -regtest listunspent
+	[
+	]
+
+Use the listunspent RPC to display the UTXOs belonging to this wallet. The list is empty because it defaults to only showing confirmed UTXOs and we just spent our only confirmed UTXO.
+
+::
+
+	> bitcoin-cli -regtest listunspent 0
+	[..... some text//
+	]
+
+
+Re-running the listunspent RPC with the argument “0” to also display unconfirmed transactions shows that we have two UTXOs, both with the same txid. The first UTXO shown is a change output that sendtoaddress created using a new address from the key pool. The second UTXO shown is the spend to the address we provided. If we had spent those satoshis to someone else, that second transaction would not be displayed in our list of UTXOs.
+
+
+::
+
+	## Bitcoin Core 0.10.1 and earlier
+	> bitcoin-cli -regtest setgenerate true 1
+
+	## Later versions of Bitcoin Core
+	> bitcoin-cli -regtest generate 1
+
+	> unset NEW_ADDRESS
+
+Create a new block to confirm the transaction above (takes less than a second) and clear the shell variable.
+
+

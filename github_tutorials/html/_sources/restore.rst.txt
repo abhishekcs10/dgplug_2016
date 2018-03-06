@@ -1,0 +1,30 @@
+estoring Your Project to a previous version of git version
+============================================================
+
+Returning to old previous version
+=====================================
+
+::
+    
+    git reset --hard your_tag_saved_on_git_repo
+
+This will rewind your HEAD branch to the specified version. All commits that came after this version are effectively undone; your project is exactly as it was at that point in time.
+
+Other option
+===============
+
+::
+
+    git reset --soft you_tag
+
+The reset command comes with a couple of options, one of the more interesting ones being the "--soft" flag. If you use it instead of --hard, Git will keep all the changes in those "undone" commits as local modifications.
+
+
+Restoring a Revision in a New Local Branch
+============================================
+
+::
+
+    git checkout -b branch_to_which_copy your_tag
+
+

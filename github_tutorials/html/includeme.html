@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -44,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -84,7 +87,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Basics of GITHUB to get started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#source-control">Source Control</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#upstream">Upstream</a></li>
@@ -101,7 +107,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#to-add-particular-file-to-the-github-repository">to add particular file to the github repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#to-commit-the-changes-in-the-github-repository">to commit the changes in the github repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#to-make-changes-to-online-copy-of-repository">to make changes to online copy of repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#to-make-changes-to-online-copy-of-repository">to make changes to online copy of repository</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#git-push">git push</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#to-get-the-changes-from-online-repository-to-the-local-machine">to get the changes from online repository to the local machine</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conflicts">Conflicts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creating-a-new-repository-on-your-local-machine-and-getting-it-to-the-github-remote-directory">Creating a new repository on your local machine and getting it to the github remote directory</a></li>
@@ -111,6 +120,7 @@
 <li class="toctree-l1"><a class="reference internal" href="branching.html#branching">Branching</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github_pages.html">Github Pages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="some_useful_info.html">Understanding GITHUB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patches.html">Submitting patches by Email</a></li>
 </ul>
 
             
@@ -123,8 +133,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">github</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">github</a>
+        
       </nav>
 
 
@@ -133,23 +145,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Basics of GITHUB to get started</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Basics of GITHUB to get started</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="_sources/includeme.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -251,6 +280,9 @@
 </div>
 <div class="section" id="to-make-changes-to-online-copy-of-repository">
 <h2>to make changes to online copy of repository<a class="headerlink" href="#to-make-changes-to-online-copy-of-repository" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="git-push">
+<h3>git push<a class="headerlink" href="#git-push" title="Permalink to this headline">¶</a></h3>
+<p>Update remote refs along with associated objects</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">&lt;</span><span class="n">remote_url</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">branch</span><span class="o">&gt;</span>
 </pre></div>
 </div>
@@ -262,6 +294,7 @@
 </ul>
 <div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">my_branch</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -312,15 +345,18 @@ now go to the local machine github project folder and run</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="branching.html" class="btn btn-neutral float-right" title="The workflow" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="branching.html" class="btn btn-neutral float-right" title="The workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Welcome to github’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Welcome to github’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -354,7 +390,8 @@ now go to the local machine github project folder and run</p>
             VERSION:'1.0.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
